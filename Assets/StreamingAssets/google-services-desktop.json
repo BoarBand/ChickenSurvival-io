@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1097782417225",
+    "project_id": "chicken-survival-io-9e0fe",
+    "storage_bucket": "chicken-survival-io-9e0fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1097782417225:android:e4a5b47cb32621e8732c98",
+        "android_client_info": {
+          "package_name": "com.BoarBand.ChickenSurvival.io"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfz1r_JopycBEyXgwgg7GhYv3xnBVevOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9081a7fb117f04388ed6e5a0a546ec, type: 3}
+  m_Name: CritDamageValue
+  m_EditorClassIdentifier: 
+  Damage: 0
+  RecoveryTime: 100
+  Level: 1
+  MaxLevel: 5
+  MinLevel: 0
+  Icon: {fileID: 449412467, guid: aed173e719ae39148bdc045dff4e23dc, type: 3}
+  Title: Critical Damage Value
+  DescriptionByLevel:
+  - Increase critical damage value to 20%
+  - Increase critical damage value to 30%
+  - Increase critical damage value to 40%
+  - Increase critical damage value to 50%
+  - Increase critical damage value to 80%
+  Type: 0
+  Ability: {fileID: 8313800499569551713, guid: 396160bf9ebabcb4a9d6530560e82935, type: 3}

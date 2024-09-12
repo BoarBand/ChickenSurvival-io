@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9081a7fb117f04388ed6e5a0a546ec, type: 3}
+  m_Name: StartGun
+  m_EditorClassIdentifier: 
+  Damage: 10
+  RecoveryTime: 0.6
+  Level: 1
+  MaxLevel: 5
+  MinLevel: 0
+  Icon: {fileID: 670803570, guid: 232737d417875a34cb885acd563faf39, type: 3}
+  Title: Pistol
+  DescriptionByLevel:
+  - Get Pistol
+  - Increase damage
+  - Increase damage
+  - Increase damage
+  - Increase damage
+  Type: 1
+  Ability: {fileID: 124661279717941697, guid: 3f72759a3c3674a4da1014f7f62d9767, type: 3}
