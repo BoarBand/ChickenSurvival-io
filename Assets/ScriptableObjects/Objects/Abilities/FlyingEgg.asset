@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9081a7fb117f04388ed6e5a0a546ec, type: 3}
   m_Name: FlyingEgg
   m_EditorClassIdentifier: 
-  Damage: 19
+  Damage: 30
   RecoveryTime: 3.1
-  Level: 0
+  Level: 5
   MaxLevel: 5
   MinLevel: 0
   Icon: {fileID: 21300000, guid: 1a883ce8dfa595144bb0b200a2547a37, type: 3}

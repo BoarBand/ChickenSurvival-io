@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9081a7fb117f04388ed6e5a0a546ec, type: 3}
   m_Name: BounceMeteorites
   m_EditorClassIdentifier: 
-  Damage: 19
+  Damage: 21
   RecoveryTime: 2
-  Level: 0
+  Level: 5
   MaxLevel: 5
   MinLevel: 0
   Icon: {fileID: 21300000, guid: 2ce7d4f26886e14489abd6da0283422e, type: 3}

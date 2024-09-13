@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9081a7fb117f04388ed6e5a0a546ec, type: 3}
   m_Name: StartGun
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 25
   RecoveryTime: 0.6
-  Level: 1
+  Level: 5
   MaxLevel: 5
   MinLevel: 0
   Icon: {fileID: 670803570, guid: 232737d417875a34cb885acd563faf39, type: 3}
