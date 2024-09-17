@@ -8,14 +8,19 @@ namespace SurvivalChicken.Controllers
         public static GameOverView Instance;
 
         [SerializeField] private TimerView _timer;
+        [SerializeField] private StatisticsView _statistics;
 
         [Header("Died Image")]
         [SerializeField] private GameObject _diedImage;
         [SerializeField] private TextMeshProUGUI _diedTimeTxt;
+        [SerializeField] private TextMeshProUGUI _diedKillsTxt;
+        [SerializeField] private TextMeshProUGUI _diedCoinsTxt;
 
-        [Header("Time Out Image")]
-        [SerializeField] private GameObject _timeOutImage;
-        [SerializeField] private TextMeshProUGUI _outTimeTxt;
+        [Header("Victory Image")]
+        [SerializeField] private GameObject _victoryImage;
+        [SerializeField] private TextMeshProUGUI _victoryTimeTxt;
+        [SerializeField] private TextMeshProUGUI _victoryKillsTxt;
+        [SerializeField] private TextMeshProUGUI _victoryCoinsTxt;
 
         private void Awake()
         {
@@ -32,7 +37,9 @@ namespace SurvivalChicken.Controllers
             string minutesTxt = minutes <= 9 ? $"0{minutes}" : $"{minutes}";
             string secondsTxt = seconds <= 9 ? $"0{seconds}" : $"{seconds}";
 
-            _diedTimeTxt.text = $"Your time: \n{minutesTxt}:{secondsTxt}";
+            _diedTimeTxt.text = $"{minutesTxt}:{secondsTxt}";
+            _diedKillsTxt.text = _statistics.KillsAmount.ToString();
+            _diedCoinsTxt.text = _statistics.CoinsAmount.ToString();
             _diedImage.SetActive(true);
             Time.timeScale = 0;
         }
@@ -47,8 +54,10 @@ namespace SurvivalChicken.Controllers
             string minutesTxt = minutes <= 9 ? $"0{minutes}" : $"{minutes}";
             string secondsTxt = seconds <= 9 ? $"0{seconds}" : $"{seconds}";
 
-            _outTimeTxt.text = $"Your time: \n{minutesTxt}:{secondsTxt}";
-            _timeOutImage.SetActive(true);
+            _victoryTimeTxt.text = $"{minutesTxt}:{secondsTxt}";
+            _victoryKillsTxt.text = _statistics.KillsAmount.ToString();
+            _victoryCoinsTxt.text = _statistics.CoinsAmount.ToString();
+            _victoryImage.SetActive(true);
             Time.timeScale = 0;
         }
 

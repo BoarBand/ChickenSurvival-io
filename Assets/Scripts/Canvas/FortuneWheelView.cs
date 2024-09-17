@@ -13,6 +13,7 @@ namespace SurvivalChicken.FortuneWheel
 {
     public class FortuneWheelView : MonoBehaviour
     {
+        [SerializeField] private StatisticsView _statisticsView;
         [SerializeField] private FortuneWheelCell[] _fortuneWheelCells;
         [SerializeField] private TextMeshProUGUI _coinsTxt;
         [SerializeField] private AbilitiesSelector _abilitiesSelector;
@@ -109,6 +110,7 @@ namespace SurvivalChicken.FortuneWheel
             int rand = Random.Range(MinRewardCoins, MaxRewardCoins);
             RewardCoins += rand;
             _coinsTxt.text = RewardCoins.ToString();
+            _statisticsView.IncreaseCoinsAmount(rand);
         }
 
         public void CloseView()
