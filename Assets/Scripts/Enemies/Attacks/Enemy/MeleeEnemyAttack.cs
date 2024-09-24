@@ -26,7 +26,7 @@ namespace SurvivalChicken.EnemiesObject.Attack
 
         private IEnumerator Attacking()
         {
-            var waitForSecs = new WaitForSeconds(EnemyParameters.AttackFrequency);
+            WaitForSeconds waitForSecs = new WaitForSeconds(EnemyParameters.AttackFrequency);
 
             while (true)
             {

@@ -28,7 +28,7 @@ namespace SurvivalChicken.Spawner
         private readonly float MaxSpawnOffScreenOffset = 150f;
 
         private readonly float MinSpawnFrequency = 1.0f;
-        private readonly float MaxSpawnFrequency = 0.3f;
+        private readonly float MaxSpawnFrequency = 0.15f;
         private readonly float TimeToMaxFrequency = 320f;
 
         private readonly float MinChanceToSpawnEliteEnemy = 0.01f;

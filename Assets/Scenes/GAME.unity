@@ -4683,6 +4683,7 @@ MonoBehaviour:
   _availableEnemies:
   - {fileID: 1443866569434305389, guid: efb312af748a94a44b1e42cec47f10b5, type: 3}
   - {fileID: 5491873556992302251, guid: bf9ce9393fe88bb4bbe5075ee28221c1, type: 3}
+  - {fileID: 9076040168832455152, guid: 221c33fb73d0ddf43be9beacf2e12175, type: 3}
   _eliteEnemySpawner: {fileID: 213797715}
 --- !u!4 &432074537
 Transform:

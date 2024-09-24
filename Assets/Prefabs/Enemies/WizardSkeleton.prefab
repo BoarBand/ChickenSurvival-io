@@ -5194,10 +5194,10 @@ GameObject:
   - component: {fileID: 4564543358765976810}
   - component: {fileID: 2243722721008883954}
   - component: {fileID: 3113938361280335328}
-  - component: {fileID: 8204145348144307963}
+  - component: {fileID: 9076040168832455152}
   - component: {fileID: 1515941623712569107}
   - component: {fileID: 6608167345118418939}
-  - component: {fileID: 1038500464630367546}
+  - component: {fileID: 7198672811625775469}
   - component: {fileID: 7061264662007731271}
   - component: {fileID: 478761129292027278}
   m_Layer: 8
@@ -5323,7 +5323,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8204145348144307963
+--- !u!114 &9076040168832455152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5332,10 +5332,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 5945568651260172305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3432eaf30e263094da4405e4c1b72612, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c0dec7084784494da3f535b86121729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Parameters: {fileID: 11400000, guid: b1d746e7077cd0f44a5a024b5fbdfd7e, type: 2}
+  Parameters: {fileID: 11400000, guid: ab8cfc2eec4c7304784b397a3db408d9, type: 2}
   DamageFlasher: {fileID: 1515941623712569107}
   _getDamageEffect: {fileID: 2301790147394272325}
   _collider: {fileID: 7061264662007731271}
@@ -5369,7 +5369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 3113938361280335328}
---- !u!114 &1038500464630367546
+--- !u!114 &7198672811625775469
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5378,12 +5378,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5945568651260172305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a8d41d410250ff4cbfddd8285ad2df6, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f6190dde7eca3c458b60b8077d0a3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyParameters: {fileID: 11400000, guid: b1d746e7077cd0f44a5a024b5fbdfd7e, type: 2}
-  Enemy: {fileID: 8204145348144307963}
+  EnemyParameters: {fileID: 11400000, guid: ab8cfc2eec4c7304784b397a3db408d9, type: 2}
+  Enemy: {fileID: 9076040168832455152}
   Animator: {fileID: 6608167345118418939}
+  _bullet: {fileID: 6160117933178016102, guid: 18136b7028b18de4a9a58564c4b87a26, type: 3}
+  _shootPoint: {fileID: 5246540210568270952}
 --- !u!61 &7061264662007731271
 BoxCollider2D:
   m_ObjectHideFlags: 0
