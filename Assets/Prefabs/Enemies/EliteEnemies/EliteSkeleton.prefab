@@ -5503,7 +5503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyParameters: {fileID: 11400000, guid: 48cb0924e25b9ac4ea125ab2d191b766, type: 2}
-  Boss: {fileID: 8014753853872153358}
+  EliteEnemy: {fileID: 8014753853872153358}
   Animator: {fileID: 8739697750236946120}
 --- !u!61 &9168000939483170934
 BoxCollider2D:
