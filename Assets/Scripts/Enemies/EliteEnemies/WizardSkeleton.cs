@@ -1,9 +1,9 @@
 using UnityEngine;
 using SurvivalChicken.Spawner;
 
-namespace SurvivalChicken.EnemiesObject
+namespace SurvivalChicken.EliteEnemiesObject
 {
-    public class WizardSkeleton : Enemy
+    public class WizardSkeleton : EliteEnemy
     {
         private PlayerSpawner _playerSpawner = PlayerSpawner.Instance;
 

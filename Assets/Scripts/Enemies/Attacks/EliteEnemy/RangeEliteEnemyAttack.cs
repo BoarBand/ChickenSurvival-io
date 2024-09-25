@@ -1,26 +1,57 @@
+using System.Collections;
 using UnityEngine;
 using SurvivalChicken.Bullets;
 using SurvivalChicken.Tools.Pool;
 
 namespace SurvivalChicken.EnemiesObject.Attack
 {
-    public class RangeEnemyAttack : EnemyAttack
+    public class RangeEliteEnemyAttack : EliteEnemyAttack
     {
         [SerializeField] private Bullet _bullet;
         [SerializeField] private Transform _shootPoint;
+
+        [Header("Parameters")]
+        [SerializeField] private float _bulletMoveSpeed;
+        [SerializeField] private float _bulletLifetime;
+        [SerializeField] private int _bulletAmounts;
 
         private ObjectsPool<Bullet> _objectsPool;
 
         private int _damage;
 
+        private Coroutine _attackingCoroutine;
+
         private readonly uint InitAmount = 0;
-        private readonly float BulletMoveSpeed = 4.5f;
-        private readonly float BulletLifetime = 5f;
-        private readonly int BulletAmounts = 6;
 
         private void Start()
         {
             Initialize();
+        }
+
+        private void OnEnable()
+        {
+            if (_attackingCoroutine != null)
+                StopCoroutine(_attackingCoroutine);
+            _attackingCoroutine = StartCoroutine(Attacking());
+        }
+
+        private void OnDisable()
+        {
+            StopCoroutine(_attackingCoroutine);
+            _attackingCoroutine = null;
+        }
+
+        private IEnumerator Attacking()
+        {
+            WaitForSeconds waitForSeconds = new WaitForSeconds(EnemyParameters.AttackFrequency);
+
+            while (gameObject.activeInHierarchy)
+            {
+                yield return waitForSeconds;
+                Attack();
+            }
+
+            _attackingCoroutine = null;
         }
 
         private void Initialize()
@@ -28,12 +59,11 @@ namespace SurvivalChicken.EnemiesObject.Attack
             _objectsPool = new ObjectsPool<Bullet>(Create, Add, Get, InitAmount);
 
             _damage = EnemyParameters.Damage;
-
-            Invoke(nameof(AttackAction), 5f);
         }
 
         public override void Attack()
         {
+            EliteEnemy.CanMove = false;
             Animator.SetAttackAnimation();
         }
 
@@ -50,9 +80,9 @@ namespace SurvivalChicken.EnemiesObject.Attack
         public override void AttackAction()
         {
             float angle = 0;
-            float angleStep = 360f / BulletAmounts;
+            float angleStep = 360f / _bulletAmounts;
 
-            for (int i = 0; i < BulletAmounts; i++)
+            for (int i = 0; i < _bulletAmounts; i++)
             {
                 Bullet bullet = _objectsPool.Get();
                 bullet.Initialize(_shootPoint.position, Quaternion.Euler(0f, 0f, angle),
@@ -62,6 +92,8 @@ namespace SurvivalChicken.EnemiesObject.Attack
 
                 angle += angleStep;
             }
+
+            EliteEnemy.CanMove = true;
         }
 
         private void Get(Bullet bullet)
@@ -70,7 +102,7 @@ namespace SurvivalChicken.EnemiesObject.Attack
                 new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0f),
                 _damage,
                 0,
-                0, BulletLifetime, BulletMoveSpeed,
+                0, _bulletLifetime, _bulletMoveSpeed,
                 () => _objectsPool.Add(bullet));
         }
     }

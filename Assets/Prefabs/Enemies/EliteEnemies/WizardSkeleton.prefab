@@ -5382,10 +5382,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyParameters: {fileID: 11400000, guid: ab8cfc2eec4c7304784b397a3db408d9, type: 2}
-  Enemy: {fileID: 9076040168832455152}
+  EliteEnemy: {fileID: 9076040168832455152}
   Animator: {fileID: 6608167345118418939}
   _bullet: {fileID: 6160117933178016102, guid: 18136b7028b18de4a9a58564c4b87a26, type: 3}
   _shootPoint: {fileID: 5246540210568270952}
+  _bulletMoveSpeed: 4.75
+  _bulletLifetime: 6
+  _bulletAmounts: 8
 --- !u!61 &7061264662007731271
 BoxCollider2D:
   m_ObjectHideFlags: 0

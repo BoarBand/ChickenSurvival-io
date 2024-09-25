@@ -39,7 +39,7 @@ namespace SurvivalChicken.EnemiesObject.Attack
         {
             if (collision.TryGetComponent(out IGetDamagable getDamagable))
             {
-                Boss.CanMove = false;
+                EliteEnemy.CanMove = false;
                 _getDamagable = getDamagable;
 
                 if (_attackCoroutine != null)
@@ -52,7 +52,7 @@ namespace SurvivalChicken.EnemiesObject.Attack
         {
             if (collision.TryGetComponent(out IGetDamagable getDamagable))
             {
-                Boss.CanMove = true;
+                EliteEnemy.CanMove = true;
                 _getDamagable = null;
 
                 StopCoroutine(_attackCoroutine);

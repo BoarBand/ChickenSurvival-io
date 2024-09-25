@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BossBat
   m_EditorClassIdentifier: 
   Health: 10000
-  MoveSpeed: 1.35
+  MoveSpeed: 1.25
   Damage: 24
   AttackFrequency: 0.2

@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
 
@@ -22,9 +23,24 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private TextMeshProUGUI _victoryKillsTxt;
         [SerializeField] private TextMeshProUGUI _victoryCoinsTxt;
 
+        private Coroutine _waitUntilVictoryCoroutine;
+
+        private readonly int TimeToInvokeVictoryImage = 900;
+
         private void Awake()
         {
             Instance = this;
+
+            if (_waitUntilVictoryCoroutine != null)
+                StopCoroutine(_waitUntilVictoryCoroutine);
+            _waitUntilVictoryCoroutine = StartCoroutine(WaitUntilVictory());
+        }
+
+        private IEnumerator WaitUntilVictory()
+        {
+            yield return new WaitUntil(() => _timer.Time >= TimeToInvokeVictoryImage);
+
+            EnableVictoryImage();
         }
 
         public void EnableDiedImage()
@@ -44,7 +60,7 @@ namespace SurvivalChicken.Controllers
             Time.timeScale = 0;
         }
 
-        public void EnableTimeOutImage()
+        public void EnableVictoryImage()
         {
             int time = _timer.Time;
 

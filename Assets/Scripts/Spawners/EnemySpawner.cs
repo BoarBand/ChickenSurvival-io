@@ -97,7 +97,8 @@ namespace SurvivalChicken.Spawner
             {
                 yield return new WaitForSeconds(Random.Range(25f, 35f));
 
-                SpawnEnemyByBorder();
+                if (_canSpawn)
+                    SpawnEnemyByBorder();
             }
         }
 
@@ -107,7 +108,8 @@ namespace SurvivalChicken.Spawner
             {
                 yield return new WaitForSeconds(Random.Range(10f, 20f));
 
-                SpawnEnemySquare();
+                if (_canSpawn)
+                    SpawnEnemySquare();
             }
         }
 
