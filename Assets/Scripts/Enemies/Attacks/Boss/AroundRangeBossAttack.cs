@@ -5,7 +5,7 @@ using SurvivalChicken.Tools.Pool;
 
 namespace SurvivalChicken.EnemiesObject.Attack
 {
-    public class RangeEliteEnemyAttack : EliteEnemyAttack
+    public class AroundRangeBossAttack : BossAttack
     {
         [SerializeField] private Bullet _bullet;
         [SerializeField] private Transform _shootPoint;
@@ -14,6 +14,7 @@ namespace SurvivalChicken.EnemiesObject.Attack
         [SerializeField] private float _bulletMoveSpeed;
         [SerializeField] private float _bulletLifetime;
         [SerializeField] private int _bulletAmounts;
+        [SerializeField] private float _attackFrequency;
 
         private ObjectsPool<Bullet> _objectsPool;
 
@@ -43,7 +44,7 @@ namespace SurvivalChicken.EnemiesObject.Attack
 
         private IEnumerator Attacking()
         {
-            WaitForSeconds waitForSeconds = new WaitForSeconds(EnemyParameters.AttackFrequency);
+            WaitForSeconds waitForSeconds = new WaitForSeconds(_attackFrequency);
 
             while (gameObject.activeInHierarchy)
             {
@@ -63,22 +64,6 @@ namespace SurvivalChicken.EnemiesObject.Attack
 
         public override void Attack()
         {
-            EliteEnemy.CanMove = false;
-            Animator.SetAttackAnimation();
-        }
-
-        private Bullet Create()
-        {
-            return Instantiate(_bullet, _shootPoint.transform.position, Quaternion.identity);
-        }
-
-        private void Add(Bullet bullet)
-        {
-            bullet.Disactivate();
-        }
-
-        public override void AttackAction()
-        {
             float angle = 0;
             float angleStep = 360f / _bulletAmounts;
 
@@ -92,9 +77,19 @@ namespace SurvivalChicken.EnemiesObject.Attack
 
                 angle += angleStep;
             }
-
-            EliteEnemy.CanMove = true;
         }
+
+        private Bullet Create()
+        {
+            return Instantiate(_bullet, _shootPoint.transform.position, Quaternion.identity);
+        }
+
+        private void Add(Bullet bullet)
+        {
+            bullet.Disactivate();
+        }
+
+        public override void AttackAction(){}
 
         private void Get(Bullet bullet)
         {

@@ -5,7 +5,7 @@ using SurvivalChicken.Tools.Pool;
 
 namespace SurvivalChicken.EnemiesObject.Attack
 {
-    public class RangeBossAttack : BossAttack
+    public class AroundRangeEliteEnemyAttack : EliteEnemyAttack
     {
         [SerializeField] private Bullet _bullet;
         [SerializeField] private Transform _shootPoint;
@@ -14,7 +14,6 @@ namespace SurvivalChicken.EnemiesObject.Attack
         [SerializeField] private float _bulletMoveSpeed;
         [SerializeField] private float _bulletLifetime;
         [SerializeField] private int _bulletAmounts;
-        [SerializeField] private float _attackFrequency;
 
         private ObjectsPool<Bullet> _objectsPool;
 
@@ -44,7 +43,7 @@ namespace SurvivalChicken.EnemiesObject.Attack
 
         private IEnumerator Attacking()
         {
-            WaitForSeconds waitForSeconds = new WaitForSeconds(_attackFrequency);
+            WaitForSeconds waitForSeconds = new WaitForSeconds(EnemyParameters.AttackFrequency);
 
             while (gameObject.activeInHierarchy)
             {
@@ -64,7 +63,8 @@ namespace SurvivalChicken.EnemiesObject.Attack
 
         public override void Attack()
         {
-            AttackAction();
+            EliteEnemy.CanMove = false;
+            Animator.SetAttackAnimation();
         }
 
         private Bullet Create()
@@ -92,6 +92,8 @@ namespace SurvivalChicken.EnemiesObject.Attack
 
                 angle += angleStep;
             }
+
+            EliteEnemy.CanMove = true;
         }
 
         private void Get(Bullet bullet)
