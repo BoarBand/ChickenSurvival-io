@@ -163,7 +163,7 @@ namespace SurvivalChicken.Spawner
 
         private void SpawnEnemyByBorder()
         {
-            float step = Random.Range(100f, 150f);
+            float step = Random.Range(150f, 200f);
 
             Vector3 topBorder = new Vector3(0f, 0f, 0f);
 

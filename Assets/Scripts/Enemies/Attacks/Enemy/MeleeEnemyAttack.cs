@@ -55,7 +55,8 @@ namespace SurvivalChicken.EnemiesObject.Attack
                 Enemy.CanMove = true;
                 _getDamagable = null;
 
-                StopCoroutine(_attackCoroutine);
+                if(_attackCoroutine != null)
+                    StopCoroutine(_attackCoroutine);
                 _attackCoroutine = null;
             }
         }

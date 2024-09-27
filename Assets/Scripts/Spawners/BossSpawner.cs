@@ -16,10 +16,12 @@ namespace SurvivalChicken.Spawner
         [SerializeField] private EnemySpawner _enemySpawner;
         [SerializeField] private PlayerSpawner _playerSpawner;
         [SerializeField] private EliteEnemySpawner _eliteEnemySpawner;
+        [SerializeField] private ParticleSystem _spawnEffect;
         [SerializeField] private Slider _healthBar;
         [SerializeField] private Transform[] _corners;
 
-        private readonly int TimePointToSpawnBoss = 5;
+        private readonly int TimePointToSpawnBoss = 600;
+        private readonly float DelayToSpawn = 3f;
         
         private Coroutine _waitForSpawnBossCoroutine;
 
@@ -62,7 +64,6 @@ namespace SurvivalChicken.Spawner
 
             SetBossRing();
             _timer.StopTimer();
-            SpawnBoss();
             _enemySpawner.StopSpawn();
             _eliteEnemySpawner.ClearEnemies();
 
@@ -70,6 +71,10 @@ namespace SurvivalChicken.Spawner
             _clampMovementBuff.Initialize(_corners[0].position, _corners[1].position, _corners[2].position, _corners[3].position);
 
             _healthBar.gameObject.SetActive(true);
+
+            yield return new WaitForSeconds(DelayToSpawn);
+            _spawnEffect.gameObject.SetActive(true);
+            SpawnBoss();
 
             _waitForSpawnBossCoroutine = null;
         }
