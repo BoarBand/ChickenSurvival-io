@@ -7,6 +7,7 @@ namespace SurvivalChicken.Controllers
     {
         [SerializeField] private TextMeshProUGUI _coinsTxt;
         [SerializeField] private TextMeshProUGUI _gemsTxt;
+        [SerializeField] private TextMeshProUGUI _energyTxt;
 
         public void UpdateCoinView(int value)
         {
@@ -16,6 +17,11 @@ namespace SurvivalChicken.Controllers
         public void UpdateGemsView(int value)
         {
             _gemsTxt.text = value.ToString();
+        }
+
+        public void UpdateEnergyView(int value)
+        {
+            _energyTxt.text = value.ToString();
         }
     }
 }
