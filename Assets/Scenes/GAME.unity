@@ -588,7 +588,6 @@ GameObject:
   - component: {fileID: 44222563}
   - component: {fileID: 44222562}
   - component: {fileID: 44222565}
-  - component: {fileID: 44222566}
   m_Layer: 0
   m_Name: CanvasGameOver
   m_TagString: Untagged
@@ -701,20 +700,6 @@ MonoBehaviour:
   _victoryTimeTxt: {fileID: 814467382}
   _victoryKillsTxt: {fileID: 111866080}
   _victoryCoinsTxt: {fileID: 1515777394}
---- !u!114 &44222566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44222560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39894a8d16efa9147844b5ed6c22c25e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _slider: {fileID: 0}
-  _sceneNum: 0
 --- !u!1 &49401352
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,10 +841,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 44222566}
-          m_TargetAssemblyTypeName: SurvivalChicken.SceneLoader.LoadScreen, Assembly-CSharp
-          m_MethodName: LoadSceneByNumber
-          m_Mode: 1
+        - m_Target: {fileID: 665017088}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8643,7 +8628,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6155662705341034103, guid: e07af75647d877d41943a6dc0f7b45d3, type: 3}
       propertyPath: _sceneNum
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6293186539043685538, guid: e07af75647d877d41943a6dc0f7b45d3, type: 3}
       propertyPath: m_AnchorMax.y
@@ -8734,6 +8719,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e07af75647d877d41943a6dc0f7b45d3, type: 3}
+--- !u!1 &665017088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 284454500873020637, guid: e07af75647d877d41943a6dc0f7b45d3, type: 3}
+  m_PrefabInstance: {fileID: 665017087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &665263368
 GameObject:
   m_ObjectHideFlags: 0
@@ -16968,10 +16958,10 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 44222566}
-          m_TargetAssemblyTypeName: SurvivalChicken.SceneLoader.LoadScreen, Assembly-CSharp
-          m_MethodName: LoadSceneByNumber
-          m_Mode: 1
+        - m_Target: {fileID: 665017088}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using DG.Tweening;
 
 namespace SurvivalChicken.SceneLoader
 {
@@ -33,6 +34,8 @@ namespace SurvivalChicken.SceneLoader
 
         private void LoadScene()
         {
+            _slider.value = 0;
+
             gameObject.SetActive(true);
 
             if (_loadAsyncCoroutine != null)
@@ -42,20 +45,10 @@ namespace SurvivalChicken.SceneLoader
 
         private IEnumerator LoadAsync()
         {
-            AsyncOperation loadAsync = SceneManager.LoadSceneAsync(_sceneNum);
-            loadAsync.allowSceneActivation = false;
+            _slider.DOValue(1f, DelayTime / 1.3f);
 
-            while (!loadAsync.isDone)
-            {
-                _slider.value = loadAsync.progress;
-
-                if(loadAsync.progress >= .9f && !loadAsync.allowSceneActivation)
-                {
-                    yield return new WaitForSeconds(DelayTime);
-                    loadAsync.allowSceneActivation = true;
-                }
-                yield return null;
-            }
+            yield return new WaitForSecondsRealtime(DelayTime);
+            SceneManager.LoadScene(_sceneNum);
 
             _loadAsyncCoroutine = null;
         }

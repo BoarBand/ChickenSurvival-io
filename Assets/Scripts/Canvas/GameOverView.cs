@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using SurvivalChicken.SaveLoadDatas;
 
 namespace SurvivalChicken.Controllers
 {
@@ -25,6 +26,8 @@ namespace SurvivalChicken.Controllers
 
         private Coroutine _waitUntilVictoryCoroutine;
 
+        private SaveLoadData _saveLoadData = new SaveLoadData();
+
         private readonly int TimeToInvokeVictoryImage = 900;
 
         private void Awake()
@@ -47,6 +50,8 @@ namespace SurvivalChicken.Controllers
         {
             int time = _timer.Time;
 
+            _saveLoadData.SaveWorldTime(0, time);
+
             int minutes = time / 60;
             int seconds = time - (minutes * 60);
 
@@ -63,6 +68,8 @@ namespace SurvivalChicken.Controllers
         public void EnableVictoryImage()
         {
             int time = _timer.Time;
+
+            _saveLoadData.SaveWorldTime(0, time);
 
             int minutes = time / 60;
             int seconds = time - (minutes * 60);

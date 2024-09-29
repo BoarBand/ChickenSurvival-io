@@ -4,7 +4,7 @@ using TMPro;
 
 namespace SurvivalChicken.Controllers
 {
-    public class WorldsSwitcher : MonoBehaviour
+    public sealed class WorldsSwitcher : MonoBehaviour
     {
         [SerializeField] private string[] _worldTitles;
         [SerializeField] private Sprite[] _worldSprites;
@@ -18,34 +18,34 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Button _nextWorldButton;
         [SerializeField] private Button _playButton;
 
-        private int _currentSelectedWorld;
+        public int CurrentSelectedWorld { get; private set; }
 
         public void Initialize()
         {
-            CheckToSwitchButtons(_currentSelectedWorld);
-            UpdateView(_currentSelectedWorld);
+            CheckToSwitchButtons(CurrentSelectedWorld);
+            UpdateView(CurrentSelectedWorld);
         }
 
         public void NextWorld()
         {
-            _currentSelectedWorld++;
+            CurrentSelectedWorld++;
 
-            if (_currentSelectedWorld > _worldTitles.Length)
-                _currentSelectedWorld = _worldTitles.Length - 1;
+            if (CurrentSelectedWorld > _worldTitles.Length)
+                CurrentSelectedWorld = _worldTitles.Length - 1;
 
-            CheckToSwitchButtons(_currentSelectedWorld);
-            UpdateView(_currentSelectedWorld);
+            CheckToSwitchButtons(CurrentSelectedWorld);
+            UpdateView(CurrentSelectedWorld);
         }
 
         public void PrevWorld()
         {
-            _currentSelectedWorld--;
+            CurrentSelectedWorld--;
 
-            if (_currentSelectedWorld < 0)
-                _currentSelectedWorld = 0;
+            if (CurrentSelectedWorld < 0)
+                CurrentSelectedWorld = 0;
 
-            CheckToSwitchButtons(_currentSelectedWorld);
-            UpdateView(_currentSelectedWorld);
+            CheckToSwitchButtons(CurrentSelectedWorld);
+            UpdateView(CurrentSelectedWorld);
         }
 
         private void CheckToSwitchButtons(int worldNum)
