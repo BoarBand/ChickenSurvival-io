@@ -7,6 +7,7 @@ namespace SurvivalChicken.Bootstrap
     {
         [SerializeField] private WorldsSwitcher _worldSwitcher;
         [SerializeField] private WorldGifts _worldGifts;
+        [SerializeField] private ValuesView _valuesView;
 
         private void Awake()
         {
@@ -14,6 +15,7 @@ namespace SurvivalChicken.Bootstrap
 
             _worldSwitcher.Initialize();
             _worldGifts.Initialize();
+            _valuesView.Initialize();
         }
     }
 }

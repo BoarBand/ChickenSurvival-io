@@ -52,6 +52,9 @@ namespace SurvivalChicken.Controllers
 
             _saveLoadData.SaveWorldTime(0, time);
 
+            if (_saveLoadData.TryGetCurrencyValue(out int coins, SaveLoadData.CurrencyTypes.Coins))
+                _saveLoadData.SaveCurrencyValue(coins + _statistics.CoinsAmount, SaveLoadData.CurrencyTypes.Coins);
+
             int minutes = time / 60;
             int seconds = time - (minutes * 60);
 
@@ -70,6 +73,9 @@ namespace SurvivalChicken.Controllers
             int time = _timer.Time;
 
             _saveLoadData.SaveWorldTime(0, time);
+
+            if (_saveLoadData.TryGetCurrencyValue(out int coins, SaveLoadData.CurrencyTypes.Coins))
+                _saveLoadData.SaveCurrencyValue(coins + _statistics.CoinsAmount, SaveLoadData.CurrencyTypes.Coins);
 
             int minutes = time / 60;
             int seconds = time - (minutes * 60);

@@ -135,7 +135,7 @@ namespace SurvivalChicken.SaveLoadDatas
             }
         }
 
-        public bool TryGetCurrcyValue(out int value, CurrencyTypes currencyType)
+        public bool TryGetCurrencyValue(out int value, CurrencyTypes currencyType)
         {
             string path = GeneralPath + "CurrencyValues.txt";
 
