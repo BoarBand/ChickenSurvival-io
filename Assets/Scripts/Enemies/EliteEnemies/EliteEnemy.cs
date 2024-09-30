@@ -11,7 +11,7 @@ namespace SurvivalChicken.EliteEnemiesObject
         {
             base.Initialize(pos, disactiveAction);
 
-            BoostItemSpawnChance = 0.015f;
+            BoostItemSpawnChance = 0.03f;
         }
 
         public override void GetDamage(Damage damage)

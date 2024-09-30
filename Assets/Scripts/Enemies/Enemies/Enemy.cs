@@ -28,7 +28,7 @@ namespace SurvivalChicken.EnemiesObject
 
         protected Action DisactivateAction;
 
-        protected float BoostItemSpawnChance = 0.0025f; 
+        protected float BoostItemSpawnChance = 0.005f; 
 
         private readonly float PushForce = 200f;
 

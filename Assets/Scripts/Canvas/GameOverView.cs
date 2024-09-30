@@ -50,6 +50,8 @@ namespace SurvivalChicken.Controllers
         {
             int time = _timer.Time;
 
+            _statistics.IncreaseCoinsAmount((int)(_statistics.KillsAmount * 1.5));
+
             _saveLoadData.SaveWorldTime(0, time);
 
             if (_saveLoadData.TryGetCurrencyValue(out int coins, SaveLoadData.CurrencyTypes.Coins))
@@ -71,6 +73,8 @@ namespace SurvivalChicken.Controllers
         public void EnableVictoryImage()
         {
             int time = _timer.Time;
+
+            _statistics.IncreaseCoinsAmount(2000 + _statistics.KillsAmount * 2);
 
             _saveLoadData.SaveWorldTime(0, time);
 

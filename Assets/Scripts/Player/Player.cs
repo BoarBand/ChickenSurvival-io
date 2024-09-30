@@ -47,6 +47,16 @@ namespace SurvivalChicken.PlayerObject
             UpdateSliderView();
         }
 
+        public void Heal(int value)
+        {
+            _health += value;
+
+            if (_health >= PlayerParameters.Health)
+                _health = PlayerParameters.Health;
+
+            UpdateSliderView();
+        }
+
         private void UpdateSliderView()
         {
             _hpBar.minValue = 0f;

@@ -13717,8 +13717,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.045694448, y: 0.88759464}
   m_AnchorMax: {x: 0.1355, y: 0.93232435}
-  m_AnchoredPosition: {x: 0.2998047, y: 5}
-  m_SizeDelta: {x: 1, y: -1}
+  m_AnchoredPosition: {x: 0, y: 5}
+  m_SizeDelta: {x: 0, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &945815569
 MonoBehaviour:
@@ -13740,7 +13740,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 93c93e80f179c4cae911a48ab2fc913b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0c60779c9ad14104a26ff569c139f15, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -20200,8 +20200,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 14.945}
-  m_SizeDelta: {x: -50.000004, y: -35.530003}
+  m_AnchoredPosition: {x: 0, y: 7.5}
+  m_SizeDelta: {x: -50.000004, y: -35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420227522
 MonoBehaviour:
@@ -20254,7 +20254,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0.25490198, g: 0.2392157, b: 0.30588236, a: 1}
-  m_EffectDistance: {x: 1, y: -15.8}
+  m_EffectDistance: {x: 1, y: -10}
   m_UseGraphicAlpha: 1
 --- !u!1 &1423043191
 GameObject:
@@ -27094,6 +27094,7 @@ MonoBehaviour:
   _boostItems:
   - {fileID: -5826835491121581774, guid: c3749dacacb4283408c2c00809a34694, type: 3}
   - {fileID: 1120709369563353563, guid: 5d3c4bedc75b04b469c058192f3a032b, type: 3}
+  - {fileID: 2466291599814152441, guid: 6c03265b435631646879a53a9678a451, type: 3}
   _fortuneWheelBoost: {fileID: 1120709369563353563, guid: 5d3c4bedc75b04b469c058192f3a032b, type: 3}
   _fortuneWheelView: {fileID: 687342668}
 --- !u!4 &1998246695

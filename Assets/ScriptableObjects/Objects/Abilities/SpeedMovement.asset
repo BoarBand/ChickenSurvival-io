@@ -17,7 +17,7 @@ MonoBehaviour:
   Level: 1
   MaxLevel: 5
   MinLevel: 0
-  Icon: {fileID: -865123288, guid: 513485eda9bbf0440bb246d72991514e, type: 3}
+  Icon: {fileID: 21300000, guid: 44f2803dad0404cbeb9ee038d70da104, type: 3}
   Title: Speed Movement
   DescriptionByLevel:
   - Increase speed movement to 5%
