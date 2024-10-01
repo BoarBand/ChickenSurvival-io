@@ -28,6 +28,8 @@ namespace SurvivalChicken.Controllers
 
         private SaveLoadData _saveLoadData = new SaveLoadData();
 
+        private bool _gameResults = false;
+
         private readonly int TimeToInvokeVictoryImage = 900;
 
         private void Awake()
@@ -48,6 +50,11 @@ namespace SurvivalChicken.Controllers
 
         public void EnableDiedImage()
         {
+            if (_gameResults)
+                return;
+
+            _gameResults = true;
+
             int time = _timer.Time;
 
             _statistics.IncreaseCoinsAmount((int)(_statistics.KillsAmount * 1.5));
@@ -72,6 +79,11 @@ namespace SurvivalChicken.Controllers
 
         public void EnableVictoryImage()
         {
+            if (_gameResults)
+                return;
+
+            _gameResults = true;
+
             int time = _timer.Time;
 
             _statistics.IncreaseCoinsAmount(2000 + _statistics.KillsAmount * 2);

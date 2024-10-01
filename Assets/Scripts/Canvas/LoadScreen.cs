@@ -12,9 +12,7 @@ namespace SurvivalChicken.SceneLoader
 
         [SerializeField] private int _sceneNum;
 
-        private readonly float DelayTime = 2.2f;
-
-        private Coroutine _loadAsyncCoroutine;
+        private readonly float DelayTime = 1.2f;
 
         private void OnEnable()
         {
@@ -38,19 +36,9 @@ namespace SurvivalChicken.SceneLoader
 
             gameObject.SetActive(true);
 
-            if (_loadAsyncCoroutine != null)
-                StopCoroutine(_loadAsyncCoroutine);
-            _loadAsyncCoroutine = StartCoroutine(LoadAsync());
-        }
-
-        private IEnumerator LoadAsync()
-        {
-            _slider.DOValue(1f, DelayTime / 1.3f);
-
-            yield return new WaitForSecondsRealtime(DelayTime);
-            SceneManager.LoadScene(_sceneNum);
-
-            _loadAsyncCoroutine = null;
+            Sequence sequence = DOTween.Sequence()
+                .Append(_slider.DOValue(1f, DelayTime))
+                .AppendCallback(() => SceneManager.LoadScene(_sceneNum));
         }
     }
 }
