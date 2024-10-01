@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.U2D;
 using UnityEngine.UI;
 
 namespace SurvivalChicken.Controllers
@@ -13,66 +12,65 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private GameObject _productsContianer;
         [SerializeField] private GameObject _dailyShopContianer;
 
-        [SerializeField] private Image _playGameImage;
-        [SerializeField] private Image _inventoryImage;
-        [SerializeField] private Image _storeImage; 
-        
         [SerializeField] private Image _productsContianerImage;
         [SerializeField] private Image _dailyShopImage;
 
         [SerializeField] private Sprite _activeSprite;
         [SerializeField] private Sprite _inactiveSprite;
 
-        public void Update()
-        {
-            UpdateImage(_playGameWindowCanvas, _playGameImage);
-            UpdateImage(_inventoryWindowCanvas, _inventoryImage);
-            UpdateImage(_storeWindowCanvas, _storeImage);
+        [Header("DownImages")]
+        [SerializeField] private Image _playDownImage;
+        [SerializeField] private Image _inventoryDownImage;
+        [SerializeField] private Image _storeDownImage;
 
-            UpdateImage(_productsContianer, _productsContianerImage);
-            UpdateImage(_dailyShopContianer, _dailyShopImage);
+        public void Initialize()
+        {
+            PlayGameWindowActivate();
         }
 
-        private void UpdateImage(GameObject windowCanvas, Image image)
+        private void UpdateDownImage(Image image)
         {
-            if (windowCanvas.activeSelf)
-            {
-                image.sprite = _activeSprite;
-            }
-            else
-            {
-                image.sprite = _inactiveSprite; 
-            }
+            _playDownImage.sprite = _inactiveSprite;
+            _inventoryDownImage.sprite = _inactiveSprite;
+            _storeDownImage.sprite = _inactiveSprite;
+
+            image.sprite = _activeSprite;
         }
 
-        public void InventoryWindowActive()
+        public void InventoryWindowActivate()
         {
             _playGameWindowCanvas.SetActive(false);
             _storeWindowCanvas.SetActive(false);
             _inventoryWindowCanvas.SetActive(true);
+
+            UpdateDownImage(_inventoryDownImage);
         }
 
-        public void PlayGameWindowActive()
+        public void PlayGameWindowActivate()
         {
             _playGameWindowCanvas.SetActive(true);
             _storeWindowCanvas.SetActive(false);
             _inventoryWindowCanvas.SetActive(false);
+
+            UpdateDownImage(_playDownImage);
         }
 
-        public void StoreWindowActive()
+        public void StoreWindowActivate()
         {
             _playGameWindowCanvas.SetActive(false);
             _storeWindowCanvas.SetActive(true);
             _inventoryWindowCanvas.SetActive(false);
+
+            UpdateDownImage(_storeDownImage);
         }      
         
-        public void ProductsContianerActive()
+        public void ProductsContianerActivate()
         {
             _productsContianer.SetActive(true);
             _dailyShopContianer.SetActive(false);
         }    
         
-        public void DailyShopContianerActive()
+        public void DailyShopContianerActivate()
         {
             _productsContianer.SetActive(false);
             _dailyShopContianer.SetActive(true);
