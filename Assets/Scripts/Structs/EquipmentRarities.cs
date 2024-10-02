@@ -1,6 +1,6 @@
-namespace SurvivalChicken.Interfaces
+namespace SurvivalChicken.Structures
 {
-    public interface IEquipmentRarity
+    public struct EquipmentRarities
     {
         public enum EquipmentRarity
         {
