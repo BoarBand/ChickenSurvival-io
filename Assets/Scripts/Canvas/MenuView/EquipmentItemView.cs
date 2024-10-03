@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using SurvivalChicken.ScriptableObjects.EquipmentsParameters;
@@ -25,21 +26,28 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Sprite _weaponModuleIcon;
         [SerializeField] private Sprite _petIcon;
 
-        public EquipmentParameters ItemParameters { get; private set; }
+        [field: SerializeField] public EquipmentParameters ItemParameters { get; private set; }
 
-        public void Initialize(EquipmentParameters equipmentParameters)
+        private event Action<EquipmentParameters> InvokedItemInfo;
+
+        public void Initialize(EquipmentParameters equipmentParameters, Action<EquipmentParameters> invokedItemInfo)
         {
             ItemParameters = equipmentParameters;
 
-            UpdateView(equipmentParameters);
+            InvokedItemInfo += invokedItemInfo;
+
+            UpdateView();
         }
 
-        private void UpdateView(EquipmentParameters equipmentParameters)
+        public void UpdateView()
         {
-            _icon.sprite = equipmentParameters.Icon;
+            if (ItemParameters == null)
+                return;
 
-            SetFrame(equipmentParameters.EquipmentRarity);
-            SetTypeIcon(equipmentParameters.EquipmentType);
+            _icon.sprite = ItemParameters.Icon;
+
+            SetFrame(ItemParameters.EquipmentRarity);
+            SetTypeIcon(ItemParameters.EquipmentType);
         }
 
         private void SetFrame(EquipmentRarities.EquipmentRarity equipmentRarity)
@@ -84,6 +92,11 @@ namespace SurvivalChicken.Controllers
                     _typeIcon.sprite = _weaponModuleIcon;
                     break;
             }
+        }
+
+        public void OnClick()
+        {
+            InvokedItemInfo?.Invoke(ItemParameters);
         }
     }
 }
