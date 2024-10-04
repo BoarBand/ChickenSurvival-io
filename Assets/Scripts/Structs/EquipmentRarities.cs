@@ -4,6 +4,7 @@ namespace SurvivalChicken.Structures
     {
         public enum EquipmentRarity
         {
+            Default,
             Common,
             Rare,
             Epic,

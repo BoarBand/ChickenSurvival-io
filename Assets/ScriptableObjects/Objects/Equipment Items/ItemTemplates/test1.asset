@@ -15,5 +15,5 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: 985db777e9bd2344089ccb543ab92cdc, type: 3}
   Label: Test1
   Description: des
-  EquipmentRarity: 0
+  EquipmentRarity: 3
   EquipmentType: 0

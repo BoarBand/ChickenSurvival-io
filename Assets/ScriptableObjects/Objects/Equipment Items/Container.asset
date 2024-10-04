@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aee5118e360c2514980111a5b58ae4f5, type: 3}
   m_Name: Container
   m_EditorClassIdentifier: 
-  EquipmentItems:
+  _equipmentItems:
+  - {fileID: 11400000, guid: fb3a5d0bcec668a48bca3f2aab22f1f9, type: 2}
   - {fileID: 11400000, guid: 26bb745989da09647a6a43ca0fa1cb12, type: 2}
-  - {fileID: 11400000, guid: c6be00c892917454baba2f20130fbd96, type: 2}
-  - {fileID: 11400000, guid: ffb74d49736ea3249a12da56f2c899bf, type: 2}
-  - {fileID: 11400000, guid: 9d16395434da3eb4f8c575dae8806d41, type: 2}
-  - {fileID: 11400000, guid: 23fa762324b926a4e8f29e5ea5a5454d, type: 2}
+  - {fileID: 11400000, guid: 86ba2a576d27eda4eaca207c9cca449e, type: 2}
+  - {fileID: 11400000, guid: 82bdf7fa65fce9741b626c3d3795e03d, type: 2}

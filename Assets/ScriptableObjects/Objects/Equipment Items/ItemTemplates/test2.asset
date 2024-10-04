@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02fe881248b068640bd001092f6fc9b3, type: 3}
-  m_Name: test1 3
+  m_Script: {fileID: 11500000, guid: 6e351bf5ed4005846aa05d7374436bb2, type: 3}
+  m_Name: test2
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: be9628ad8324bac45961f3d097269668, type: 3}
-  Label: Test1
-  Description: des
-  EquipmentRarity: 0
-  EquipmentType: 3
+  Icon: {fileID: 21300000, guid: d72edd554a2924903818ffae43801394, type: 3}
+  Label: tesr2
+  Description: 
+  EquipmentRarity: 1
+  EquipmentType: 1

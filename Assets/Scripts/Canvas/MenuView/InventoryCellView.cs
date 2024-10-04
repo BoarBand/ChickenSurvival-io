@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using SurvivalChicken.ScriptableObjects.EquipmentsParameters;
@@ -13,14 +14,17 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private EquipmentTypes.EquipmentType _equipmentType;
 
         [Header("Rarity Frames")]
+        [SerializeField] private Sprite _defaultFrame;
         [SerializeField] private Sprite _commonFrame;
         [SerializeField] private Sprite _rareFrame;
         [SerializeField] private Sprite _epicFrame;
         [SerializeField] private Sprite _legendaryFrame;
 
         public EquipmentParameters SelectedItem { get; private set; }
+        
+        private event Action<EquipmentParameters> InvokedItemInfo;
 
-        public void Initialize(EquipmentParameters equipmentParameters)
+        public void Initialize(EquipmentParameters equipmentParameters, Action<EquipmentParameters> invokeItemInfo)
         {
             if(equipmentParameters == null)
             {
@@ -35,6 +39,8 @@ namespace SurvivalChicken.Controllers
 
             UpdateView(equipmentParameters);
 
+            InvokedItemInfo += invokeItemInfo;
+
             SelectedItem = equipmentParameters;
         }
 
@@ -44,6 +50,7 @@ namespace SurvivalChicken.Controllers
             {
                 _icon.gameObject.SetActive(false);
                 _defaultIcon.gameObject.SetActive(true);
+                SetFrame(EquipmentRarities.EquipmentRarity.Default);
                 return;
             }
 
@@ -57,21 +64,22 @@ namespace SurvivalChicken.Controllers
 
         private void SetFrame(EquipmentRarities.EquipmentRarity equipmentRarity)
         {
-            switch (equipmentRarity)
+            _frame.sprite = equipmentRarity switch
             {
-                case EquipmentRarities.EquipmentRarity.Common:
-                    _frame.sprite = _commonFrame;
-                    break;
-                case EquipmentRarities.EquipmentRarity.Rare:
-                    _frame.sprite = _rareFrame;
-                    break;
-                case EquipmentRarities.EquipmentRarity.Epic:
-                    _frame.sprite = _epicFrame;
-                    break;
-                case EquipmentRarities.EquipmentRarity.Legendary:
-                    _frame.sprite = _legendaryFrame;
-                    break;
-            }
+                EquipmentRarities.EquipmentRarity.Common => _commonFrame,
+                EquipmentRarities.EquipmentRarity.Rare => _rareFrame,
+                EquipmentRarities.EquipmentRarity.Epic => _epicFrame,
+                EquipmentRarities.EquipmentRarity.Legendary => _legendaryFrame,
+                _ => _defaultFrame,
+            };
+        }
+
+        public void OnClick()
+        {
+            if (SelectedItem == null)
+                return;
+
+            InvokedItemInfo?.Invoke(SelectedItem);
         }
     }
 }

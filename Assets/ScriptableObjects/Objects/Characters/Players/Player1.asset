@@ -17,3 +17,9 @@ MonoBehaviour:
   CritDamageChance: 20
   CritDamageValue: 80
   InitialAbility: {fileID: 11400000, guid: 5fcca2878751f7f4fa4cc4d5d326a95f, type: 2}
+  <HelmetEquipment>k__BackingField: {fileID: 0}
+  <ArmorEquipment>k__BackingField: {fileID: 0}
+  <BootsEquipment>k__BackingField: {fileID: 0}
+  <AttributeEquipment>k__BackingField: {fileID: 0}
+  <WeaponModuleEquipment>k__BackingField: {fileID: 0}
+  <PetEquipment>k__BackingField: {fileID: 0}
