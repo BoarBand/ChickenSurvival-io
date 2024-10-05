@@ -1,6 +1,7 @@
 using UnityEngine;
 using SurvivalChicken.Spawner;
 using SurvivalChicken.Controllers;
+using SurvivalChicken.SaveLoadDatas;
 
 namespace SurvivalChicken.Bootstrap
 {
@@ -19,9 +20,11 @@ namespace SurvivalChicken.Bootstrap
         [SerializeField] private StatisticsView _statisticsView;
         [SerializeField] private AbilitiesSelector _abilitiesSelector;
         [SerializeField] private BoostItemsSpawner _boostItemsSpawner;
+        [SerializeField] private SaveLoadData _saveLoadData;
 
         private void Awake()
         {
+            _saveLoadData.Initialize();
             _playerSpawner.Initialize();
             _progressBarAbilities.Initialize();
             _feedSpawner.Initialize();

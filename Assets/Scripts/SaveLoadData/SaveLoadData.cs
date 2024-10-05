@@ -1,11 +1,73 @@
-using System.Collections.Generic;
 using System.IO;
+using UnityEngine;
+using System;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SurvivalChicken.SaveLoadDatas
 {
-    public sealed class SaveLoadData
+    public sealed class SaveLoadData : MonoBehaviour
     {
-        private readonly string GeneralPath = "Assets/SaveData/";
+        //private readonly string GeneralPath = "Assets/SaveData/";
+
+        private readonly string DataFile = "/GameData.dat";
+
+        public int Coins = 0;
+        public int Gems = 0;
+        public int Energy = 100;
+
+        public int[] WorldTimes = new int[1];
+
+        public void Initialize()
+        {
+            LoadGame();
+        }
+
+        public void SaveGame()
+        {
+            string path = Application.persistentDataPath + DataFile;
+
+            BinaryFormatter bf = new BinaryFormatter();
+            using (FileStream file = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Write))
+            {
+                SaveData saveData = new SaveData();
+                saveData.Coins = Coins;
+                saveData.Gems = Gems;
+                saveData.Energy = Energy;
+                saveData.WorldTimes = WorldTimes;
+                bf.Serialize(file, saveData);
+            }
+        }
+
+        public void LoadGame()
+        {
+            string path = Application.persistentDataPath + DataFile;
+
+            using (FileStream file = new FileStream(path, FileMode.OpenOrCreate, FileAccess.Read))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                if (file.Length <= 0)
+                    return;
+                SaveData saveData = (SaveData)bf.Deserialize(file);
+                Coins = saveData.Coins;
+                Gems = saveData.Gems;
+                Energy = saveData.Energy;
+                WorldTimes = saveData.WorldTimes;
+            }
+        }
+
+        public void ResetData()
+        {
+            string path = Application.persistentDataPath + DataFile;
+
+            File.Delete(path);
+
+            Coins = 0;
+            Gems = 0;
+            Energy = 100;
+            WorldTimes[0] = 0;
+    }
+
+        /*
 
         #region WorldTimes
 
@@ -76,14 +138,7 @@ namespace SurvivalChicken.SaveLoadDatas
 
         #region Currency Values
 
-        public enum CurrencyTypes
-        {
-            Coins,
-            Gems,
-            Energy
-        }
-
-        public void SaveCurrencyValue(int value, CurrencyTypes currencyType)
+        public void SaveCurrencyValue(int value, CurrencyTypes.CurrencyType currencyType)
         {
             string path = GeneralPath + "CurrencyValues.txt";
 
@@ -109,15 +164,15 @@ namespace SurvivalChicken.SaveLoadDatas
 
             switch (currencyType)
             {
-                case CurrencyTypes.Coins:
+                case CurrencyTypes.CurrencyType.Coins:
                     if (currencies.ContainsKey(coinsLabel))
                         currencies[coinsLabel] = value;
                     break;
-                case CurrencyTypes.Gems:
+                case CurrencyTypes.CurrencyType.Gems:
                     if (currencies.ContainsKey(gemsLabel))
                         currencies[gemsLabel] = value;
                     break;
-                case CurrencyTypes.Energy:
+                case CurrencyTypes.CurrencyType.Energy:
                     if (currencies.ContainsKey(energyLabel))
                         currencies[energyLabel] = value;
                     break;
@@ -135,7 +190,7 @@ namespace SurvivalChicken.SaveLoadDatas
             }
         }
 
-        public bool TryGetCurrencyValue(out int value, CurrencyTypes currencyType)
+        public bool TryGetCurrencyValue(out int value, CurrencyTypes.CurrencyType currencyType)
         {
             string path = GeneralPath + "CurrencyValues.txt";
 
@@ -161,21 +216,21 @@ namespace SurvivalChicken.SaveLoadDatas
 
             switch (currencyType)
             {
-                case CurrencyTypes.Coins:
+                case CurrencyTypes.CurrencyType.Coins:
                     if (currencies.ContainsKey(coinsLabel))
                     {
                         value = currencies[coinsLabel];
                         return true;
                     }
                     break;
-                case CurrencyTypes.Gems:
+                case CurrencyTypes.CurrencyType.Gems:
                     if (currencies.ContainsKey(gemsLabel))
                     {
                         value = currencies[gemsLabel];
                         return true;
                     }
                     break;
-                case CurrencyTypes.Energy:
+                case CurrencyTypes.CurrencyType.Energy:
                     if (currencies.ContainsKey(energyLabel))
                     {
                         value = currencies[energyLabel];
@@ -189,5 +244,17 @@ namespace SurvivalChicken.SaveLoadDatas
         }
 
         #endregion
+
+        */
+    }
+
+    [Serializable]
+    public class SaveData
+    {
+        public int Coins;
+        public int Gems;
+        public int Energy;
+
+        public int[] WorldTimes = new int[1];
     }
 }

@@ -10,18 +10,11 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private TextMeshProUGUI _gemsTxt;
         [SerializeField] private TextMeshProUGUI _energyTxt;
 
-        private SaveLoadData _saveLoadData = new SaveLoadData();
+        [SerializeField] private SaveLoadData _saveLoadData;
 
         public void Initialize()
         {
-            if (_saveLoadData.TryGetCurrencyValue(out int coins, SaveLoadData.CurrencyTypes.Coins))
-                UpdateCoinView(coins);
-
-            if (_saveLoadData.TryGetCurrencyValue(out int gems, SaveLoadData.CurrencyTypes.Gems))
-                UpdateGemsView(gems);
-
-            if (_saveLoadData.TryGetCurrencyValue(out int energy, SaveLoadData.CurrencyTypes.Energy))
-                UpdateEnergyView(energy);
+            UpdateCoinView(_saveLoadData.Coins);
         }
 
         public void UpdateCoinView(int value)

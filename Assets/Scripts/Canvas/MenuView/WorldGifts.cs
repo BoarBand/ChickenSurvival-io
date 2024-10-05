@@ -9,9 +9,8 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private WorldsSwitcher _worldSwitcher;
         [SerializeField] private Sprite _openGift;
         [SerializeField] private Sprite _closeGift;
+        [SerializeField] private SaveLoadData _saveLoadData;
         [SerializeField] private Image[] _giftImgs;
-
-        private SaveLoadData _saveLoadData = new SaveLoadData();
 
         private readonly int TimeToFirstGift = 60;
         private readonly int TimeToSecondGift = 300;
@@ -19,8 +18,7 @@ namespace SurvivalChicken.Controllers
 
         public void Initialize()
         {
-            if(_saveLoadData.TryGetWorldTime(0, out int value))   
-                CheckToSetSprites(value);
+            CheckToSetSprites(_saveLoadData.WorldTimes[0]);
         }
 
         private void CheckToSetSprites(int time)

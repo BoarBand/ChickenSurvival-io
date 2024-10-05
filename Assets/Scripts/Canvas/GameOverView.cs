@@ -11,6 +11,7 @@ namespace SurvivalChicken.Controllers
 
         [SerializeField] private TimerView _timer;
         [SerializeField] private StatisticsView _statistics;
+        [SerializeField] private SaveLoadData _saveLoadData;
 
         [Header("Died Image")]
         [SerializeField] private GameObject _diedImage;
@@ -25,8 +26,6 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private TextMeshProUGUI _victoryCoinsTxt;
 
         private Coroutine _waitUntilVictoryCoroutine;
-
-        private SaveLoadData _saveLoadData = new SaveLoadData();
 
         private bool _gameResults = false;
 
@@ -56,13 +55,14 @@ namespace SurvivalChicken.Controllers
             _gameResults = true;
 
             int time = _timer.Time;
+            
+            if(_saveLoadData.WorldTimes[0] < time)
+                _saveLoadData.WorldTimes[0] = time;
 
             _statistics.IncreaseCoinsAmount((int)(_statistics.KillsAmount * 1.5));
 
-            _saveLoadData.SaveWorldTime(0, time);
-
-            if (_saveLoadData.TryGetCurrencyValue(out int coins, SaveLoadData.CurrencyTypes.Coins))
-                _saveLoadData.SaveCurrencyValue(coins + _statistics.CoinsAmount, SaveLoadData.CurrencyTypes.Coins);
+            _saveLoadData.Coins += _statistics.CoinsAmount;
+            _saveLoadData.SaveGame();
 
             int minutes = time / 60;
             int seconds = time - (minutes * 60);
@@ -86,12 +86,13 @@ namespace SurvivalChicken.Controllers
 
             int time = _timer.Time;
 
+            if (_saveLoadData.WorldTimes[0] < time)
+                _saveLoadData.WorldTimes[0] = time;
+
             _statistics.IncreaseCoinsAmount(2000 + _statistics.KillsAmount * 2);
 
-            _saveLoadData.SaveWorldTime(0, time);
-
-            if (_saveLoadData.TryGetCurrencyValue(out int coins, SaveLoadData.CurrencyTypes.Coins))
-                _saveLoadData.SaveCurrencyValue(coins + _statistics.CoinsAmount, SaveLoadData.CurrencyTypes.Coins);
+            _saveLoadData.Coins += _statistics.CoinsAmount;
+            _saveLoadData.SaveGame();
 
             int minutes = time / 60;
             int seconds = time - (minutes * 60);
