@@ -1,5 +1,6 @@
 using UnityEngine;
 using SurvivalChicken.Structures;
+using SurvivalChicken.Skills;
 
 namespace SurvivalChicken.ScriptableObjects.EquipmentsParameters
 {
@@ -10,5 +11,6 @@ namespace SurvivalChicken.ScriptableObjects.EquipmentsParameters
         public string Description;
         public EquipmentRarities.EquipmentRarity EquipmentRarity;
         public EquipmentTypes.EquipmentType EquipmentType;
+        public Skill Skill;
     }
 }

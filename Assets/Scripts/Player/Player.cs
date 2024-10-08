@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using SurvivalChicken.ScriptableObjects.CharactersParameters.Player;
 using SurvivalChicken.Interfaces;
 using SurvivalChicken.Structures;
+using SurvivalChicken.Skills;
 
 namespace SurvivalChicken.PlayerObject
 {
@@ -13,18 +14,20 @@ namespace SurvivalChicken.PlayerObject
 
         [field: SerializeField] public Sprite WingSprite { get; private set; }
         [field: SerializeField] public Transform AbilitiesContainer { get; private set; }
+        [field: SerializeField] public Transform SkillsContainer { get; private set; }
         [field: SerializeField] public PlayerCharacterParameters PlayerParameters { get; private set; }
 
         private event Action DiedAction;
 
-        private int _health;
+        private int _maxHealth;
 
+        public int Health { get; set; }
         public int CritDamageValue { get; private set; }
         public int CritDamageChance { get; private set; }
 
         private void Awake()
         {
-            _health = PlayerParameters.Health;
+            Health = PlayerParameters.Health;
             CritDamageChance = PlayerParameters.CritDamageChance;
             CritDamageValue = PlayerParameters.CritDamageValue;
         }
@@ -32,13 +35,17 @@ namespace SurvivalChicken.PlayerObject
         public void Initialize(Action diedAction)
         {
             DiedAction = diedAction;
+
+            AddSkillsToPlayer();
+
+            _maxHealth = Health;
         }
 
         public void GetDamage(Damage damage)
         {
-            _health -= damage.TotalDamage;
+            Health -= damage.TotalDamage;
 
-            if(_health <= 0)
+            if(Health <= 0)
             {
                 DiedAction?.Invoke();
                 return;
@@ -49,10 +56,10 @@ namespace SurvivalChicken.PlayerObject
 
         public void Heal(int value)
         {
-            _health += value;
+            Health += value;
 
-            if (_health >= PlayerParameters.Health)
-                _health = PlayerParameters.Health;
+            if (Health >= PlayerParameters.Health)
+                Health = PlayerParameters.Health;
 
             UpdateSliderView();
         }
@@ -60,9 +67,9 @@ namespace SurvivalChicken.PlayerObject
         private void UpdateSliderView()
         {
             _hpBar.minValue = 0f;
-            _hpBar.maxValue = PlayerParameters.Health;
+            _hpBar.maxValue = _maxHealth;
 
-            _hpBar.value = _health;
+            _hpBar.value = Health;
         }
 
         public void ChangeCritDamageValue(int amount)
@@ -87,6 +94,40 @@ namespace SurvivalChicken.PlayerObject
         public Vector3 GetCurrentPosition()
         {
             return transform.position;
+        }
+
+        private void AddSkillsToPlayer()
+        {
+            if (PlayerParameters == null)
+                return;
+
+            if (PlayerParameters.HelmetEquipment != null)
+                if (PlayerParameters.HelmetEquipment.Skill != null)
+                {
+                    Skill skill = Instantiate(PlayerParameters.HelmetEquipment.Skill);
+                    skill.Initialize(PlayerParameters.HelmetEquipment.EquipmentRarity);
+                }
+
+            if(PlayerParameters.ArmorEquipment != null)
+                if (PlayerParameters.ArmorEquipment.Skill != null)
+                {
+                    Skill skill = Instantiate(PlayerParameters.ArmorEquipment.Skill);
+                    skill.Initialize(PlayerParameters.ArmorEquipment.EquipmentRarity);
+                }
+
+            if (PlayerParameters.BootsEquipment != null)
+                if (PlayerParameters.BootsEquipment.Skill != null)
+                {
+                    Skill skill = Instantiate(PlayerParameters.BootsEquipment.Skill);
+                    skill.Initialize(PlayerParameters.BootsEquipment.EquipmentRarity);
+                }
+
+            if (PlayerParameters.AttributeEquipment != null)
+                if (PlayerParameters.AttributeEquipment.Skill != null)
+                {
+                    Skill skill = Instantiate(PlayerParameters.AttributeEquipment.Skill);
+                    skill.Initialize(PlayerParameters.AttributeEquipment.EquipmentRarity);
+                }
         }
     }
 }
