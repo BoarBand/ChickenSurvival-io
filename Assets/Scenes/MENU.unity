@@ -6235,6 +6235,9 @@ MonoBehaviour:
   Gems: 0
   Energy: 100
   WorldTimes: 00000000
+  _scriptableObjectsToSave:
+  - {fileID: 11400000, guid: 7fa4af754a9da0049a57b5b7beadbe7b, type: 2}
+  - {fileID: 11400000, guid: 6eb5c70afcc74d847bea646408cdf2d1, type: 2}
 --- !u!1 &366022922
 GameObject:
   m_ObjectHideFlags: 0
@@ -7829,7 +7832,7 @@ GameObject:
   - component: {fileID: 483671159}
   - component: {fileID: 483671158}
   m_Layer: 5
-  m_Name: RemoveButton
+  m_Name: ChangeButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7961,7 +7964,7 @@ MonoBehaviour:
       - m_Target: {fileID: 235060792}
         m_TargetAssemblyTypeName: SurvivalChicken.Controllers.EquipmentItemInfo,
           Assembly-CSharp
-        m_MethodName: Remove
+        m_MethodName: Equip
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12889,7 +12892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Remove
+  m_text: Change
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c5a2f5aebca044b7697857ecb652ebde, type: 2}
   m_sharedMaterial: {fileID: -5208283091522369685, guid: c5a2f5aebca044b7697857ecb652ebde, type: 2}
@@ -30707,6 +30710,7 @@ MonoBehaviour:
   _transformContainer: {fileID: 2109761100}
   _equipmentContainer: {fileID: 11400000, guid: 6eb5c70afcc74d847bea646408cdf2d1, type: 2}
   _equipmentItemInfo: {fileID: 235060792}
+  _saveLoadData: {fileID: 354019230}
   _helmetCell: {fileID: 2032266681}
   _armorCell: {fileID: 1001414786}
   _bootsCell: {fileID: 1470405780}

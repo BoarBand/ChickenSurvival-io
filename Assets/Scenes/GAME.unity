@@ -23395,6 +23395,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca8e55ed628b343479d509530c18c747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Coins: 0
+  Gems: 0
+  Energy: 100
+  WorldTimes: 00000000
+  _scriptableObjectsToSave:
+  - {fileID: 11400000, guid: 6eb5c70afcc74d847bea646408cdf2d1, type: 2}
+  - {fileID: 11400000, guid: 7fa4af754a9da0049a57b5b7beadbe7b, type: 2}
 --- !u!1 &1672291181
 GameObject:
   m_ObjectHideFlags: 0

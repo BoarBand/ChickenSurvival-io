@@ -23,3 +23,4 @@ MonoBehaviour:
   <AttributeEquipment>k__BackingField: {fileID: 0}
   <WeaponModuleEquipment>k__BackingField: {fileID: 0}
   <PetEquipment>k__BackingField: {fileID: 0}
+  <FileName>k__BackingField: PlayerParameters1.json

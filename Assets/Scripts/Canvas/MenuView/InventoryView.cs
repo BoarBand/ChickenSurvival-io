@@ -3,6 +3,7 @@ using UnityEngine;
 using SurvivalChicken.ScriptableObjects.EquipmentsParameters;
 using SurvivalChicken.ScriptableObjects.CharactersParameters.Player;
 using SurvivalChicken.Interfaces;
+using SurvivalChicken.SaveLoadDatas;
 
 namespace SurvivalChicken.Controllers
 {
@@ -12,6 +13,7 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Transform _transformContainer;
         [SerializeField] private EquipmentContainer _equipmentContainer;
         [SerializeField] private EquipmentItemInfo _equipmentItemInfo;
+        [SerializeField] private SaveLoadData _saveLoadData;
 
         [Header("Inventory Cells")]
         [SerializeField] private InventoryCellView _helmetCell;
@@ -130,6 +132,8 @@ namespace SurvivalChicken.Controllers
             _equipmentItemViewsContainer.Remove(item);
             Destroy(item.gameObject);
 
+            _saveLoadData.SaveGame();
+
             UpdateInventoryCellView(PlayerParameters);
         }
 
@@ -154,6 +158,8 @@ namespace SurvivalChicken.Controllers
                 PlayerParameters.PetEquipment = null;
 
             CreateItemView(equipmentParameters);
+
+            _saveLoadData.SaveGame();
 
             UpdateInventoryCellView(PlayerParameters);
         }
