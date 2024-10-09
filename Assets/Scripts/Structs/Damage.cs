@@ -4,12 +4,12 @@ namespace SurvivalChicken.Structures
 {
     public struct Damage
     {
-        private int _damage;
+        private int _damage{ get; set; }
         private int _critDamageChance;
         private int _critDamageValue;
 
         public bool IsCritical { get; private set; }
-        public int TotalDamage { get; private set; }
+        public int TotalDamage { get; set; }
 
         public Damage(int damage, int critDamageChance, int critDamageValue)
         {
