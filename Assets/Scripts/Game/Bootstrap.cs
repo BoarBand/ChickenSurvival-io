@@ -25,11 +25,11 @@ namespace SurvivalChicken.Bootstrap
         private void Awake()
         {
             _saveLoadData.Initialize();
+            _statisticsView.Initialize();
             _playerSpawner.Initialize();
             _progressBarAbilities.Initialize();
             _feedSpawner.Initialize();
             _boostItemsSpawner.Initialize();
-            _statisticsView.Initialize();
             _enemySpawner.Initialize();
             _bossSpawner.Initialize();
             _eliteEnemySpawner.Initialize();

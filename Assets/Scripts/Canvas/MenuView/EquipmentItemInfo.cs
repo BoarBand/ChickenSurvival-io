@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace SurvivalChicken.Controllers
 {
-    public class EquipmentItemInfo : MonoBehaviour
+    public sealed class EquipmentItemInfo : MonoBehaviour
     {
         [SerializeField] private InventoryView _inventoryView;
         [SerializeField] private Button _selectButton;

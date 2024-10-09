@@ -20,14 +20,16 @@ namespace SurvivalChicken.PlayerObject
         private event Action DiedAction;
 
         private int _maxHealth;
-
+        
         public int Health { get; set; }
+        public int Damage { get; set; }
         public int CritDamageValue { get; private set; }
         public int CritDamageChance { get; private set; }
 
         private void Awake()
         {
             Health = PlayerParameters.Health;
+            Damage = PlayerParameters.Damage;
             CritDamageChance = PlayerParameters.CritDamageChance;
             CritDamageValue = PlayerParameters.CritDamageValue;
         }
@@ -58,8 +60,8 @@ namespace SurvivalChicken.PlayerObject
         {
             Health += value;
 
-            if (Health >= PlayerParameters.Health)
-                Health = PlayerParameters.Health;
+            if (Health >= _maxHealth)
+                Health = _maxHealth;
 
             UpdateSliderView();
         }

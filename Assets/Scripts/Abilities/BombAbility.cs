@@ -19,6 +19,13 @@ namespace SurvivalChicken.Abilities
         private readonly float BulletLifetime = 2f;
         private readonly float AngleSpread = 360f;
 
+        private int Damage { 
+            get
+            {
+                return _damage + Player.Damage;
+            }
+        }
+
         public override void Initialize()
         {
             transform.SetParent(Player.AbilitiesContainer);
@@ -78,7 +85,7 @@ namespace SurvivalChicken.Abilities
 
             bullet.Initialize(transform.position,
                 new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rotZ),
-                _damage,
+                Damage,
                 Player.CritDamageChance,
                 Player.CritDamageValue, BulletLifetime, BulletMoveSpeed,
                 () => _objectsPool.Add(bullet));

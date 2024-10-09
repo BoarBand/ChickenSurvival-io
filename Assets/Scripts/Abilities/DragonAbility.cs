@@ -25,6 +25,14 @@ namespace SurvivalChicken.Abilities
 
         private readonly int RoarLabel = Animator.StringToHash("Roar");
 
+        private int Damage
+        {
+            get
+            {
+                return _damage + Player.Damage;
+            }
+        }
+
         public override void Initialize()
         {
             transform.SetParent(Player.AbilitiesContainer);
@@ -103,7 +111,7 @@ namespace SurvivalChicken.Abilities
 
             bullet.Initialize(transform.position,
                 new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, rotZ), enemy,
-                _damage,
+                Damage,
                 Player.CritDamageChance,
                 Player.CritDamageValue, BulletMoveSpeed,
                 () => _objectsPool.Add(bullet));

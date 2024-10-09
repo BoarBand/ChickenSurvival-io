@@ -4,7 +4,7 @@ namespace SurvivalChicken.Structures
 {
     public struct Damage
     {
-        private int _damage{ get; set; }
+        private int _damage;
         private int _critDamageChance;
         private int _critDamageValue;
 
