@@ -31,6 +31,7 @@ namespace SurvivalChicken.Skills
         {
             if (_killsCheckCoroutine != null)
                 StopCoroutine(_killsCheckCoroutine);
+
             _killsCheckCoroutine = StartCoroutine(KillsCheck());
         }
 
@@ -47,6 +48,7 @@ namespace SurvivalChicken.Skills
 
                 if (_applyDamageBuffCoroutine != null)
                     StopCoroutine(_applyDamageBuffCoroutine);
+
                 _applyDamageBuffCoroutine = StartCoroutine(ApplyDamageBuff());
             }
         }
