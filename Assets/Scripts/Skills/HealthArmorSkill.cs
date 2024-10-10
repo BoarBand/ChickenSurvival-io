@@ -2,7 +2,6 @@ using UnityEngine;
 using SurvivalChicken.Structures;
 using SurvivalChicken.PlayerObject;
 using System.Collections;
-using SurvivalChicken.Controllers;
 
 namespace SurvivalChicken.Skills
 {
@@ -32,7 +31,6 @@ namespace SurvivalChicken.Skills
         {
             if (_healthBuffCoroutine != null)
                 StopCoroutine(_healthBuffCoroutine);
-
             _healthBuffCoroutine = StartCoroutine(ApplyHealthBuffRare());
         }
 

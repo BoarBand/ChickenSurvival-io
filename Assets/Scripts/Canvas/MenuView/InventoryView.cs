@@ -28,6 +28,12 @@ namespace SurvivalChicken.Controllers
 
         [field:SerializeField] public PlayerCharacterParameters PlayerParameters { get; set; }
 
+        private void OnEnable()
+        {
+            UpdateEquipmentItemsView();
+            UpdateInventoryCellView(PlayerParameters);
+        }
+
         public void Initalize()
         {
             CreateItemsView();
@@ -38,15 +44,10 @@ namespace SurvivalChicken.Controllers
         private void CreateItemsView()
         {
             foreach (EquipmentParameters item in _equipmentContainer.GetList())
-            {
-                EquipmentItemView itemView = Instantiate(_equipmentItem);
-                itemView.Initialize(item, (i) => _equipmentItemInfo.Initialize(i, true));
-                itemView.transform.SetParent(_transformContainer, false);
-                _equipmentItemViewsContainer.Add(itemView);
-            }
+                CreateItemView(item);
         }
 
-        private void CreateItemView(EquipmentParameters equipmentParameters)
+        public void CreateItemView(EquipmentParameters equipmentParameters)
         {
             EquipmentItemView itemView = Instantiate(_equipmentItem);
             itemView.Initialize(equipmentParameters, (i) => _equipmentItemInfo.Initialize(i, true));

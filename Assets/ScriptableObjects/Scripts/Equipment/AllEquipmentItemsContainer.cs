@@ -22,23 +22,15 @@ namespace SurvivalChicken.ScriptableObjects.EquipmentsParameters
 
             if (chance <= ChanceToGetLegendaryItem && LegendaryItems.Count > 0)
                 return LegendaryItems[Random.Range(0, LegendaryItems.Count)];
-            else
-                GetRandomEquipment();
 
             if (chance <= ChanceToGetEpicItem && EpicItems.Count > 0)
                 return EpicItems[Random.Range(0, EpicItems.Count)];
-            else
-                GetRandomEquipment();
 
             if (chance <= ChanceToGetRareItem && RareItems.Count > 0)
                 return RareItems[Random.Range(0, RareItems.Count)];
-            else
-                GetRandomEquipment();
 
             if (chance <= ChanceToGetCommonItem && CommonItems.Count > 0)
                 return CommonItems[Random.Range(0, CommonItems.Count)];
-            else
-                GetRandomEquipment();
 
             return null;
         }

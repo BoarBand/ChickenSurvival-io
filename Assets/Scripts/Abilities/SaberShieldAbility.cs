@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using SurvivalChicken.Bullets;
 
@@ -13,9 +14,12 @@ namespace SurvivalChicken.Abilities
         private List<SaberBullet> _bullets = new List<SaberBullet>();
 
         private int _bulletAmounts = 2;
+
+        private Coroutine _activeSabersCoroutine;
         
         private readonly float Radius = 1.4f;
         private readonly float AngleOffset = -90f;
+        private readonly float ActiveDuraction = 5f;
 
         public override void Initialize()
         {
@@ -24,6 +28,10 @@ namespace SurvivalChicken.Abilities
             transform.localPosition = _abilityLocalPosition;
 
             Upgrade();
+
+            if (_activeSabersCoroutine != null)
+                StopCoroutine(_activeSabersCoroutine);
+            _activeSabersCoroutine = StartCoroutine(ActiveSabers());
         }
 
         private void InitSpawn()
@@ -74,6 +82,22 @@ namespace SurvivalChicken.Abilities
 
             ClearAllSabers();
             InitSpawn();
+        }
+
+        private IEnumerator ActiveSabers()
+        {
+            WaitForSeconds waitForSeconds = new WaitForSeconds(ActiveDuraction);
+
+            while (true)
+            {
+                _container.gameObject.SetActive(true);
+
+                yield return waitForSeconds;
+
+                _container.gameObject.SetActive(false);
+
+                yield return waitForSeconds;
+            }
         }
 
         private void ClearAllSabers()
