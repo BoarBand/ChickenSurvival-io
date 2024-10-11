@@ -14,7 +14,7 @@ namespace SurvivalChicken.Controllers
 
         public void Initialize()
         {
-            UpdateCoinView(_saveLoadData.Coins);
+            UpdateAllValues();
         }
 
         public void UpdateCoinView(int value)
@@ -30,6 +30,13 @@ namespace SurvivalChicken.Controllers
         public void UpdateEnergyView(int value)
         {
             _energyTxt.text = value.ToString() + "/100";
+        }
+
+        public void UpdateAllValues()
+        {
+            UpdateGemsView(_saveLoadData.Gems);
+            UpdateCoinView(_saveLoadData.Coins);
+            UpdateEnergyView(_saveLoadData.Energy);
         }
     }
 }
