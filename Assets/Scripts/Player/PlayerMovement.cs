@@ -17,11 +17,11 @@ namespace SurvivalChicken.PlayerObject.Movement
 
         private readonly MovementAction _movementAction = new MovementAction();
 
-        private float _movementSpeed;
+        public float MovementSpeed { get; set; }
 
         private void Start()
         {
-            _movementSpeed = _playerParameters.MoveSpeed;
+            MovementSpeed = _playerParameters.MoveSpeed;
         }
 
         private void OnEnable()
@@ -48,7 +48,7 @@ namespace SurvivalChicken.PlayerObject.Movement
 
         private void FixedUpdate()
         {
-            _movementAction.FixedUpdateMove(transform, _joystick.Direction, _movementSpeed);
+            _movementAction.FixedUpdateMove(transform, _joystick.Direction, MovementSpeed);
         }
 
         private void TurnPlayer()
@@ -61,7 +61,7 @@ namespace SurvivalChicken.PlayerObject.Movement
 
         public void ChangeMovementSpeed(float percent)
         {
-            _movementSpeed += _movementSpeed * (percent / 100f);
+            MovementSpeed += MovementSpeed * (percent / 100f);
         }
     }
 }

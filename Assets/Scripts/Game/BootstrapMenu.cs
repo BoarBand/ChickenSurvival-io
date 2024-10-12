@@ -19,8 +19,8 @@ namespace SurvivalChicken.Bootstrap
 
             _saveLoadData.Initialize();
             _worldSwitcher.Initialize();
-            _worldGifts.Initialize();
             _valuesView.Initialize();
+            _worldGifts.Initialize();
             _menuWindowsSwitcher.Initialize();
             _inventoryView.Initalize();
         }

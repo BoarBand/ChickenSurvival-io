@@ -13,6 +13,7 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Image _frame;
         [SerializeField] private Image _icon;
         [SerializeField] private Image _typeIcon;
+        [SerializeField] private Image _chestImg;
 
         [SerializeField] private AllEquipmentItemsContainer _allItemsContainer;
         [SerializeField] private EquipmentContainer _equipmentContainer;
@@ -39,17 +40,21 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Color32 _epicTextColor;
         [SerializeField] private Color32 _legendaryTextColor;
 
-        private void OnEnable()
+        public void Initialize(Sprite chestSprite, 
+            int chanceToGetCommonItem, 
+            int chanceToGetRareItem, 
+            int chanceToGetEpicItem, 
+            int chanceToGetLegendaryItem)
         {
-            Initialize();
-        }
-
-        public void Initialize()
-        {
-            EquipmentParameters equipmentParameters = _allItemsContainer.GetRandomEquipment();
+            EquipmentParameters equipmentParameters = _allItemsContainer.GetRandomEquipment(chanceToGetCommonItem, 
+                chanceToGetRareItem, 
+                chanceToGetEpicItem, 
+                chanceToGetLegendaryItem);
 
             if (equipmentParameters == null)
                 return;
+
+            _chestImg.sprite = chestSprite;
 
             UpdateLabel(equipmentParameters);
             UpdateRarityView(equipmentParameters.EquipmentRarity);
@@ -60,6 +65,8 @@ namespace SurvivalChicken.Controllers
             _inventoryView.CreateItemView(equipmentParameters);
 
             _saveLoadData.SaveGame();
+
+            gameObject.SetActive(true);
         }
 
         private void UpdateIconsView(EquipmentParameters equipmentParameters)

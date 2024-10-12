@@ -4,6 +4,7 @@ using SurvivalChicken.ScriptableObjects.EquipmentsParameters;
 using SurvivalChicken.ScriptableObjects.CharactersParameters.Player;
 using SurvivalChicken.Interfaces;
 using SurvivalChicken.SaveLoadDatas;
+using TMPro;
 
 namespace SurvivalChicken.Controllers
 {
@@ -14,6 +15,8 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private EquipmentContainer _equipmentContainer;
         [SerializeField] private EquipmentItemInfo _equipmentItemInfo;
         [SerializeField] private SaveLoadData _saveLoadData;
+        [SerializeField] private TextMeshProUGUI _hpViewTxt;
+        [SerializeField] private TextMeshProUGUI _totalDamageViewTxt;
 
         [Header("Inventory Cells")]
         [SerializeField] private InventoryCellView _helmetCell;
@@ -59,6 +62,9 @@ namespace SurvivalChicken.Controllers
         {
             foreach (EquipmentItemView item in _equipmentItemViewsContainer)
                 item.UpdateView();
+
+            _hpViewTxt.text = PlayerParameters.Health.ToString();
+            _totalDamageViewTxt.text = PlayerParameters.Damage.ToString();
         }
 
         public void SetEquipment(EquipmentParameters equipmentParameters)

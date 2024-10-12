@@ -17,6 +17,8 @@ namespace SurvivalChicken.SaveLoadDatas
 
         public int[] WorldTimes = new int[1];
 
+        public int[,] OpenedWorldGifts = new int[1, 3];
+
         [SerializeField] private ScriptableObject[] _scriptableObjectsToSave;
 
         private List<ISaveLoadPersistentData> _saveLoadPersistentDatas = new List<ISaveLoadPersistentData>();
@@ -42,6 +44,7 @@ namespace SurvivalChicken.SaveLoadDatas
                 saveData.Gems = Gems;
                 saveData.Energy = Energy;
                 saveData.WorldTimes = WorldTimes;
+                saveData.OpenedWorldGifts = OpenedWorldGifts;
                 bf.Serialize(file, saveData);
             }
 
@@ -63,6 +66,7 @@ namespace SurvivalChicken.SaveLoadDatas
                 Gems = saveData.Gems;
                 Energy = saveData.Energy;
                 WorldTimes = saveData.WorldTimes;
+                OpenedWorldGifts = saveData.OpenedWorldGifts;
             }
 
             foreach (ISaveLoadPersistentData saveLoadPersistentData in _saveLoadPersistentDatas)
@@ -80,6 +84,10 @@ namespace SurvivalChicken.SaveLoadDatas
             Gems = 0;
             Energy = 100;
             WorldTimes[0] = 0;
+
+            for (int i = 0; i < OpenedWorldGifts.GetLength(0); i++)
+                for (int j = 0; j < OpenedWorldGifts.GetLength(1); j++)
+                    OpenedWorldGifts[i, j] = 0;
         }
 
     }
@@ -92,5 +100,7 @@ namespace SurvivalChicken.SaveLoadDatas
         public int Energy;
 
         public int[] WorldTimes = new int[1];
+
+        public int[,] OpenedWorldGifts = new int[1, 3];
     }
 }

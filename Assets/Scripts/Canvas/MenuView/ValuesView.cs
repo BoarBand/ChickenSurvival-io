@@ -14,6 +14,8 @@ namespace SurvivalChicken.Controllers
 
         public void Initialize()
         {
+            _saveLoadData.Gems += 100;
+            _saveLoadData.SaveGame();
             UpdateAllValues();
         }
 
