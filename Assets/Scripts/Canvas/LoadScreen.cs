@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections;
 using DG.Tweening;
 
 namespace SurvivalChicken.SceneLoader
@@ -16,11 +15,15 @@ namespace SurvivalChicken.SceneLoader
 
         private void OnEnable()
         {
-            Initialize();
+            Initialize(_sceneNum);
         }
 
-        public void Initialize()
+        public void Initialize(int sceneNum)
         {
+            _sceneNum = sceneNum;
+
+            gameObject.SetActive(true);
+
 			if(_slider != null)
 				LoadScene();
         }

@@ -18,9 +18,9 @@ namespace SurvivalChicken.Bootstrap
             Time.timeScale = 1f;
 
             _saveLoadData.Initialize();
-            _worldSwitcher.Initialize();
             _valuesView.Initialize();
             _worldGifts.Initialize();
+            _worldSwitcher.Initialize();
             _menuWindowsSwitcher.Initialize();
             _inventoryView.Initalize();
         }
