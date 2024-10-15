@@ -22,6 +22,7 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Button _playButton;
         [SerializeField] private TextMeshProUGUI _playButtonTxt;
         [SerializeField] private LoadScreen _loadScreen;
+        [SerializeField] private WorldGifts _worldGifts;
         [SerializeField] private SaveLoadData _saveLoadData;
 
         [Header("Unlock & Lock Settings")]
@@ -36,8 +37,6 @@ namespace SurvivalChicken.Controllers
         {
             CheckToSwitchButtons(CurrentSelectedWorld);
             UpdateView(CurrentSelectedWorld);
-            print(_saveLoadData);
-            print(_saveLoadData.LockedWorlds);
             UpdatePlayButtonView(_saveLoadData.LockedWorlds[CurrentSelectedWorld]);
         }
 
@@ -51,6 +50,8 @@ namespace SurvivalChicken.Controllers
             CheckToSwitchButtons(CurrentSelectedWorld);
             UpdateView(CurrentSelectedWorld);
             UpdatePlayButtonView(_saveLoadData.LockedWorlds[CurrentSelectedWorld]);
+
+            _worldGifts.Initialize();
         }
 
         public void PrevWorld()
@@ -63,6 +64,8 @@ namespace SurvivalChicken.Controllers
             CheckToSwitchButtons(CurrentSelectedWorld);
             UpdateView(CurrentSelectedWorld);
             UpdatePlayButtonView(_saveLoadData.LockedWorlds[CurrentSelectedWorld]);
+
+            _worldGifts.Initialize();
         }
 
         private void CheckToSwitchButtons(int worldNum)

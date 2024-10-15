@@ -17,24 +17,25 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Sprite _closeGift;
         [SerializeField] private SaveLoadData _saveLoadData;
         [SerializeField] private Image[] _giftRays;
+        [SerializeField] private WorldsSwitcher _worldsSwitcher;
 
-        private readonly int TimeToFirstGift = 60;
-        private readonly int TimeToSecondGift = 300;
-        private readonly int TimeToThirdGift = 900;
+        private readonly int TimeToFirstGift = 2;
+        private readonly int TimeToSecondGift = 5;
+        private readonly int TimeToThirdGift = 15;
 
         public void Initialize()
         {
-            UpdateView(_saveLoadData.WorldTimes[0]);
+            UpdateView(_saveLoadData.StagePlayTimes[_worldsSwitcher.CurrentSelectedWorld]);
         }
 
         public void GetWorldGifts()
         {
-            int worldNum = 0;
+            int worldNum = _worldsSwitcher.CurrentSelectedWorld;
 
             if (!_giftRays[0].gameObject.activeInHierarchy && !_giftRays[1].gameObject.activeInHierarchy && !_giftRays[2].gameObject.activeInHierarchy)
                 return;
 
-            if (_saveLoadData.WorldTimes[worldNum] > TimeToThirdGift)
+            if (_saveLoadData.StagePlayTimes[worldNum] > TimeToThirdGift)
             {
                 _collectedPanelView.Initialize(CreateCollectItem(_collectItems[0], 300), CreateCollectItem(_collectItems[1], 30));
                 _saveLoadData.OpenedWorldGifts[worldNum, 2] = 1;
@@ -42,14 +43,14 @@ namespace SurvivalChicken.Controllers
                 _saveLoadData.OpenedWorldGifts[worldNum, 0] = 1;
             }
 
-            if (_saveLoadData.WorldTimes[worldNum] > TimeToSecondGift && _saveLoadData.WorldTimes[worldNum] < TimeToThirdGift)
+            if (_saveLoadData.StagePlayTimes[worldNum] > TimeToSecondGift && _saveLoadData.StagePlayTimes[worldNum] < TimeToThirdGift)
             {
                 _collectedPanelView.Initialize(CreateCollectItem(_collectItems[0], 200), CreateCollectItem(_collectItems[1], 20));
                 _saveLoadData.OpenedWorldGifts[worldNum, 1] = 1;
                 _saveLoadData.OpenedWorldGifts[worldNum, 0] = 1;
             }
 
-            if (_saveLoadData.WorldTimes[worldNum] > TimeToFirstGift && _saveLoadData.WorldTimes[worldNum] < TimeToSecondGift)
+            if (_saveLoadData.StagePlayTimes[worldNum] > TimeToFirstGift && _saveLoadData.StagePlayTimes[worldNum] < TimeToSecondGift)
             {
                 _collectedPanelView.Initialize(CreateCollectItem(_collectItems[0], 100), CreateCollectItem(_collectItems[1], 10));
                 _saveLoadData.OpenedWorldGifts[worldNum, 0] = 1;
@@ -57,7 +58,7 @@ namespace SurvivalChicken.Controllers
 
             _saveLoadData.SaveGame();
             _valuesView.UpdateAllValues();
-            UpdateView(_saveLoadData.WorldTimes[worldNum]);
+            UpdateView(_saveLoadData.StagePlayTimes[worldNum]);
         }
 
         private ICollect CreateCollectItem(CollectItem collectItem, int amount)
@@ -70,21 +71,24 @@ namespace SurvivalChicken.Controllers
         private void UpdateView(int time)
         {
             CheckToDisplayRays(time);
-            CheckToSetSprites(time);
+            CheckToSetSprites();
         }
 
-        private void CheckToSetSprites(int time)
+        private void CheckToSetSprites()
         {
-            _giftImgs[0].sprite = _saveLoadData.OpenedWorldGifts[0, 0] == 1 ? _openGift : _closeGift;
-            _giftImgs[1].sprite = _saveLoadData.OpenedWorldGifts[0, 1] == 1 ? _openGift : _closeGift;
-            _giftImgs[2].sprite = _saveLoadData.OpenedWorldGifts[0, 2] == 1 ? _openGift : _closeGift;
+            _giftImgs[0].sprite = _saveLoadData.OpenedWorldGifts[_worldsSwitcher.CurrentSelectedWorld, 0] == 1 ? _openGift : _closeGift;
+            _giftImgs[1].sprite = _saveLoadData.OpenedWorldGifts[_worldsSwitcher.CurrentSelectedWorld, 1] == 1 ? _openGift : _closeGift;
+            _giftImgs[2].sprite = _saveLoadData.OpenedWorldGifts[_worldsSwitcher.CurrentSelectedWorld, 2] == 1 ? _openGift : _closeGift;
         }
 
         private void CheckToDisplayRays(int time)
         {
-            _giftRays[0].gameObject.SetActive(time >= TimeToFirstGift && _saveLoadData.OpenedWorldGifts[0, 0] == 0 ? true : false);
-            _giftRays[1].gameObject.SetActive(time >= TimeToSecondGift && _saveLoadData.OpenedWorldGifts[0, 1] == 0 ? true : false);
-            _giftRays[2].gameObject.SetActive(time >= TimeToThirdGift && _saveLoadData.OpenedWorldGifts[0, 2] == 0 ? true : false);
+            _giftRays[0].gameObject.SetActive(time >= TimeToFirstGift &&
+                _saveLoadData.OpenedWorldGifts[_worldsSwitcher.CurrentSelectedWorld, 0] == 0 ? true : false);
+            _giftRays[1].gameObject.SetActive(time >= TimeToSecondGift && 
+                _saveLoadData.OpenedWorldGifts[_worldsSwitcher.CurrentSelectedWorld, 1] == 0 ? true : false);
+            _giftRays[2].gameObject.SetActive(time >= TimeToThirdGift && 
+                _saveLoadData.OpenedWorldGifts[_worldsSwitcher.CurrentSelectedWorld, 2] == 0 ? true : false);
         }
     }
 }

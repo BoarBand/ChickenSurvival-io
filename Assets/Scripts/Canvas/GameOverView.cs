@@ -55,9 +55,11 @@ namespace SurvivalChicken.Controllers
             _gameResults = true;
 
             int time = _timer.Time;
-            
-            if(_saveLoadData.WorldTimes[0] < time)
-                _saveLoadData.WorldTimes[0] = time;
+
+            int stageNum = GetCurrentStageNum();
+
+            if (_saveLoadData.StagePlayTimes[stageNum] < time)
+                _saveLoadData.StagePlayTimes[stageNum] = time;
 
             _statistics.IncreaseCoinsAmount((int)(_statistics.KillsAmount * 1.5));
 
@@ -86,8 +88,13 @@ namespace SurvivalChicken.Controllers
 
             int time = _timer.Time;
 
-            if (_saveLoadData.WorldTimes[0] < time)
-                _saveLoadData.WorldTimes[0] = time;
+            int stageNum = GetCurrentStageNum();
+
+            if (_saveLoadData.StagePlayTimes[stageNum] < time)
+                _saveLoadData.StagePlayTimes[stageNum] = time;
+
+            if (stageNum < _saveLoadData.LockedWorlds.Length - 1)
+                _saveLoadData.LockedWorlds[stageNum + 1] = 0;
 
             _statistics.IncreaseCoinsAmount(2000 + _statistics.KillsAmount * 2);
 
@@ -105,6 +112,12 @@ namespace SurvivalChicken.Controllers
             _victoryCoinsTxt.text = _statistics.CoinsAmount.ToString();
             _victoryImage.SetActive(true);
             Time.timeScale = 0;
+        }
+
+        private int GetCurrentStageNum()
+        {
+            string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+            return System.Convert.ToInt32(sceneName[^1].ToString()) - 1;
         }
 
         public void ResetTime()
