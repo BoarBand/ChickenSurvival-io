@@ -15,6 +15,13 @@ namespace SurvivalChicken.SaveLoadDatas
         public int Gems = 0;
         public int Energy = 100;
 
+        public int HelmetUpgradeLevel = 1;
+        public int ArmorUpgradeLevel = 1;
+        public int BootsUpgradeLevel = 1;
+        public int AttributeUpgradeLevel = 1;
+        public int WeaponModuleUpgradeLevel = 1;
+        public int PetUpgradeLevel = 1;
+
         public int[] StagePlayTimes = new int[2];
 
         public int[,] OpenedWorldGifts = new int[2, 3];
@@ -45,6 +52,12 @@ namespace SurvivalChicken.SaveLoadDatas
                 saveData.Coins = Coins;
                 saveData.Gems = Gems;
                 saveData.Energy = Energy;
+                saveData.ArmorUpgradeLevel = ArmorUpgradeLevel;
+                saveData.AttributeUpgradeLevel = AttributeUpgradeLevel;
+                saveData.BootsUpgradeLevel = BootsUpgradeLevel;
+                saveData.HelmetUpgradeLevel = HelmetUpgradeLevel;
+                saveData.WeaponModuleUpgradeLevel = WeaponModuleUpgradeLevel;
+                saveData.PetUpgradeLevel = PetUpgradeLevel;
                 saveData.StagePlayTimes = StagePlayTimes;
                 saveData.OpenedWorldGifts = OpenedWorldGifts;
                 saveData.LockedWorlds = LockedWorlds;
@@ -68,6 +81,12 @@ namespace SurvivalChicken.SaveLoadDatas
                 Coins = saveData.Coins;
                 Gems = saveData.Gems;
                 Energy = saveData.Energy;
+                ArmorUpgradeLevel = saveData.ArmorUpgradeLevel;
+                AttributeUpgradeLevel = saveData.AttributeUpgradeLevel;
+                BootsUpgradeLevel = saveData.BootsUpgradeLevel;
+                HelmetUpgradeLevel = saveData.HelmetUpgradeLevel;
+                WeaponModuleUpgradeLevel = saveData.WeaponModuleUpgradeLevel;
+                PetUpgradeLevel = saveData.PetUpgradeLevel;
                 StagePlayTimes = saveData.StagePlayTimes;
                 OpenedWorldGifts = saveData.OpenedWorldGifts;
                 LockedWorlds = saveData.LockedWorlds;
@@ -110,6 +129,13 @@ namespace SurvivalChicken.SaveLoadDatas
         public int Coins;
         public int Gems;
         public int Energy;
+
+        public int HelmetUpgradeLevel;
+        public int ArmorUpgradeLevel;
+        public int BootsUpgradeLevel;
+        public int AttributeUpgradeLevel;
+        public int WeaponModuleUpgradeLevel;
+        public int PetUpgradeLevel;
 
         public int[] StagePlayTimes = new int[2];
 

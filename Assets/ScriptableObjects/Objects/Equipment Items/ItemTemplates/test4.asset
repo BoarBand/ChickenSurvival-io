@@ -15,6 +15,7 @@ MonoBehaviour:
   Icon: {fileID: 21300000, guid: df3842d585d52463a976e9e5e405cc05, type: 3}
   Label: Test4
   Description: 
+  Value: 10
   EquipmentRarity: 3
   EquipmentType: 3
   Skill: {fileID: 0}

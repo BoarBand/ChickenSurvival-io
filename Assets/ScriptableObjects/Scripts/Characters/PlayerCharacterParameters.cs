@@ -2,12 +2,16 @@ using UnityEngine;
 using SurvivalChicken.Interfaces;
 using SurvivalChicken.ScriptableObjects.EquipmentsParameters;
 using System.IO;
+using SurvivalChicken.SaveLoadDatas;
 
 namespace SurvivalChicken.ScriptableObjects.CharactersParameters.Player
 {
     [CreateAssetMenu(fileName = "New Player", menuName = "ScriptableObjects/Characters/Player")]
     public class PlayerCharacterParameters : CharacterParameters, IPlayerEquipment, ISaveLoadPersistentData
     {
+        public int TotalDamage;
+        public int TotalHealth;
+
         public int CritDamageChance;
         public int CritDamageValue;
 
@@ -21,6 +25,29 @@ namespace SurvivalChicken.ScriptableObjects.CharactersParameters.Player
         [field: SerializeField] public PetEquipmentParameters PetEquipment { get; set; }
 
         [field: SerializeField] public string FileName { get; set; }
+
+        public void UpdateAdditionValues(SaveLoadData saveLoadData)
+        {
+            int additionDamage = 0;
+            int additionHealth = 0;
+
+            if (HelmetEquipment != null)
+                additionHealth += HelmetEquipment.Value * saveLoadData.HelmetUpgradeLevel;
+            if (ArmorEquipment != null)
+                additionHealth += ArmorEquipment.Value * saveLoadData.ArmorUpgradeLevel;
+            if (BootsEquipment != null)
+                additionHealth += BootsEquipment.Value * saveLoadData.BootsUpgradeLevel;
+
+            if (WeaponModuleEquipment != null)
+                additionDamage += WeaponModuleEquipment.Value * saveLoadData.WeaponModuleUpgradeLevel;
+            if (AttributeEquipment != null)
+                additionDamage += AttributeEquipment.Value * saveLoadData.AttributeUpgradeLevel;
+            if (PetEquipment != null)
+                additionDamage += PetEquipment.Value * saveLoadData.PetUpgradeLevel;
+
+            TotalDamage = additionDamage + Damage;
+            TotalHealth = additionHealth + Health;
+        }
 
         public void Save()
         {

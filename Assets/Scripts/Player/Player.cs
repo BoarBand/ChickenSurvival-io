@@ -28,8 +28,8 @@ namespace SurvivalChicken.PlayerObject
 
         private void Awake()
         {
-            Health = PlayerParameters.Health;
-            Damage = PlayerParameters.Damage;
+            Health = PlayerParameters.TotalHealth;
+            Damage = PlayerParameters.TotalDamage;
             CritDamageChance = PlayerParameters.CritDamageChance;
             CritDamageValue = PlayerParameters.CritDamageValue;
         }

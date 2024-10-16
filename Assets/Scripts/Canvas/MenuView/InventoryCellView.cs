@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using SurvivalChicken.ScriptableObjects.EquipmentsParameters;
 using SurvivalChicken.Structures;
+using TMPro;
     
 namespace SurvivalChicken.Controllers
 {
@@ -11,6 +12,7 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Image _icon;
         [SerializeField] private Image _defaultIcon;
         [SerializeField] private Image _frame;
+        [SerializeField] private TextMeshProUGUI _levelTxt;
         [SerializeField] private EquipmentTypes.EquipmentType _equipmentType;
 
         [Header("Rarity Frames")]
@@ -24,11 +26,12 @@ namespace SurvivalChicken.Controllers
         
         private event Action<EquipmentParameters> InvokedItemInfo;
 
-        public void Initialize(EquipmentParameters equipmentParameters, Action<EquipmentParameters> invokeItemInfo)
+        public void Initialize(EquipmentParameters equipmentParameters, int level, Action<EquipmentParameters> invokeItemInfo)
         {
             if(equipmentParameters == null)
             {
                 UpdateView(null);
+                UpdateLvlTxtView(level);
 
                 SelectedItem = null;
                 return;
@@ -38,6 +41,7 @@ namespace SurvivalChicken.Controllers
                 return;
 
             UpdateView(equipmentParameters);
+            UpdateLvlTxtView(level);
 
             InvokedItemInfo += invokeItemInfo;
 
@@ -80,6 +84,17 @@ namespace SurvivalChicken.Controllers
                 return;
 
             InvokedItemInfo?.Invoke(SelectedItem);
+        }
+
+        private void UpdateLvlTxtView(int level)
+        {
+            if (level < 10)
+            {
+                _levelTxt.text = $"LV.0{level}";
+                return;
+            }
+
+            _levelTxt.text = $"LV.{level}";
         }
     }
 }

@@ -42,6 +42,8 @@ namespace SurvivalChicken.Controllers
             CreateItemsView();
             UpdateEquipmentItemsView();
             UpdateInventoryCellView(PlayerParameters);
+
+            PlayerParameters.UpdateAdditionValues(_saveLoadData);
         }
 
         private void CreateItemsView()
@@ -58,13 +60,13 @@ namespace SurvivalChicken.Controllers
             _equipmentItemViewsContainer.Add(itemView);
         }
 
-        private void UpdateEquipmentItemsView()
+        public void UpdateEquipmentItemsView()
         {
             foreach (EquipmentItemView item in _equipmentItemViewsContainer)
                 item.UpdateView();
 
-            _hpViewTxt.text = PlayerParameters.Health.ToString();
-            _totalDamageViewTxt.text = PlayerParameters.Damage.ToString();
+            _hpViewTxt.text = PlayerParameters.TotalHealth.ToString();
+            _totalDamageViewTxt.text = PlayerParameters.TotalDamage.ToString();
         }
 
         public void SetEquipment(EquipmentParameters equipmentParameters)
@@ -139,72 +141,88 @@ namespace SurvivalChicken.Controllers
             _equipmentItemViewsContainer.Remove(item);
             Destroy(item.gameObject);
 
-            _saveLoadData.SaveGame();
-
             UpdateInventoryCellView(PlayerParameters);
+            PlayerParameters.UpdateAdditionValues(_saveLoadData);
+            UpdateEquipmentItemsView();
+
+            _saveLoadData.SaveGame();
         }
 
         public void RemoveEquipment(EquipmentParameters equipmentParameters)
         {
             if (equipmentParameters is HelmetEquipmentParameters)
+            {
                 PlayerParameters.HelmetEquipment = null;
+            }
 
             if (equipmentParameters is ArmorEquipmentParameters)
+            {
                 PlayerParameters.ArmorEquipment = null;
+            }
 
             if (equipmentParameters is BootsEquipmentParameters)
+            {
                 PlayerParameters.BootsEquipment = null;
+            }
 
             if (equipmentParameters is AttributeEquipmentParameters)
+            {
                 PlayerParameters.AttributeEquipment = null;
+            }
 
             if (equipmentParameters is WeaponModuleEquipmentParameters)
+            {
                 PlayerParameters.WeaponModuleEquipment = null;
+            }
 
             if (equipmentParameters is PetEquipmentParameters)
+            {
                 PlayerParameters.PetEquipment = null;
+            }
 
             CreateItemView(equipmentParameters);
 
-            _saveLoadData.SaveGame();
-
             UpdateInventoryCellView(PlayerParameters);
+            PlayerParameters.UpdateAdditionValues(_saveLoadData);
+            UpdateEquipmentItemsView();
+
+            _saveLoadData.SaveGame();
         }
 
-        private void UpdateInventoryCellView(IPlayerEquipment playerEquipment)
+        public void UpdateInventoryCellView(IPlayerEquipment playerEquipment)
         {
             if (playerEquipment == null)
                 return;
 
             if (playerEquipment.HelmetEquipment != null)
-                _helmetCell.Initialize(playerEquipment.HelmetEquipment, (item) => _equipmentItemInfo.Initialize(item, false));
+                _helmetCell.Initialize(playerEquipment.HelmetEquipment, _saveLoadData.HelmetUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
             else
-                _helmetCell.Initialize(null, (item) => _equipmentItemInfo.Initialize(item, false));
+                _helmetCell.Initialize(null, _saveLoadData.HelmetUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
 
             if (playerEquipment.ArmorEquipment != null)
-                _armorCell.Initialize(playerEquipment.ArmorEquipment, (item) => _equipmentItemInfo.Initialize(item, false));
+                _armorCell.Initialize(playerEquipment.ArmorEquipment, _saveLoadData.ArmorUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
             else
-                _armorCell.Initialize(null, (item) => _equipmentItemInfo.Initialize(item, false));
+                _armorCell.Initialize(null, _saveLoadData.ArmorUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
 
             if (playerEquipment.BootsEquipment != null)
-                _bootsCell.Initialize(playerEquipment.BootsEquipment, (item) => _equipmentItemInfo.Initialize(item, false));
+                _bootsCell.Initialize(playerEquipment.BootsEquipment, _saveLoadData.BootsUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
             else
-                _bootsCell.Initialize(null, (item) => _equipmentItemInfo.Initialize(item, false));
+                _bootsCell.Initialize(null, _saveLoadData.BootsUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
 
             if (playerEquipment.AttributeEquipment != null)
-                _attributeCell.Initialize(playerEquipment.AttributeEquipment, (item) => _equipmentItemInfo.Initialize(item, false));
+                _attributeCell.Initialize(playerEquipment.AttributeEquipment, _saveLoadData.AttributeUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
             else
-                _attributeCell.Initialize(null, (item) => _equipmentItemInfo.Initialize(item, false));
+                _attributeCell.Initialize(null, _saveLoadData.AttributeUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
 
             if (playerEquipment.WeaponModuleEquipment != null)
-                _weaponModuleCell.Initialize(playerEquipment.WeaponModuleEquipment, (item) => _equipmentItemInfo.Initialize(item, false));
+                _weaponModuleCell.Initialize(playerEquipment.WeaponModuleEquipment, _saveLoadData.WeaponModuleUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
             else
-                _weaponModuleCell.Initialize(null, (item) => _equipmentItemInfo.Initialize(item, false));
+                _weaponModuleCell.Initialize(null, _saveLoadData.WeaponModuleUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
 
             if (playerEquipment.PetEquipment != null)
-                _petCell.Initialize(playerEquipment.PetEquipment, (item) => _equipmentItemInfo.Initialize(item, false));
+                _petCell.Initialize(playerEquipment.PetEquipment, _saveLoadData.PetUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
             else
-                _petCell.Initialize(null, (item) => _equipmentItemInfo.Initialize(item, false));
+                _petCell.Initialize(null, _saveLoadData.PetUpgradeLevel, (item) => _equipmentItemInfo.Initialize(item, false));
         }
 
         private EquipmentItemView GetItemView(EquipmentParameters parameters)
