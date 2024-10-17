@@ -2797,9 +2797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _availableEliteEnemies:
-  - {fileID: 3148187262902194178, guid: f1737e90fd8b8cd46b001c92c0207420, type: 3}
-  - {fileID: 8014753853872153358, guid: 7e0002efe5f109c47946266be65b9d14, type: 3}
-  - {fileID: 9076040168832455152, guid: 221c33fb73d0ddf43be9beacf2e12175, type: 3}
+  - {fileID: 7334974352521617440, guid: d345aa3cc81a1284a95881474f11763b, type: 3}
   _timer: {fileID: 830504666}
 --- !u!4 &213797716
 Transform:
@@ -4986,8 +4984,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _availableEnemies:
-  - {fileID: 1443866569434305389, guid: efb312af748a94a44b1e42cec47f10b5, type: 3}
-  - {fileID: 5491873556992302251, guid: bf9ce9393fe88bb4bbe5075ee28221c1, type: 3}
+  - {fileID: 5299014899008412632, guid: c33896d7853d16b4092e3ea9b6fda0b2, type: 3}
+  - {fileID: 2184854899806150831, guid: 902582a2742bc24419e0315137139950, type: 3}
   _eliteEnemySpawner: {fileID: 213797715}
 --- !u!4 &432074537
 Transform:
@@ -23398,7 +23396,14 @@ MonoBehaviour:
   Coins: 0
   Gems: 0
   Energy: 100
-  WorldTimes: 00000000
+  HelmetUpgradeLevel: 1
+  ArmorUpgradeLevel: 1
+  BootsUpgradeLevel: 1
+  AttributeUpgradeLevel: 1
+  WeaponModuleUpgradeLevel: 1
+  PetUpgradeLevel: 1
+  StagePlayTimes: 0000000000000000
+  LockedWorlds: 0000000001000000
   _scriptableObjectsToSave:
   - {fileID: 11400000, guid: 6eb5c70afcc74d847bea646408cdf2d1, type: 2}
   - {fileID: 11400000, guid: 7fa4af754a9da0049a57b5b7beadbe7b, type: 2}

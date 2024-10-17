@@ -9,6 +9,10 @@ namespace SurvivalChicken.ScriptableObjects.EquipmentsParameters
         public Sprite Icon;
         public string Label;
         public string Description;
+        public string CommonSkillDescription;
+        public string RareSkillDescription;
+        public string EpicSkillDescription;
+        public string LegendarySkillDescription;
         public EquipmentRarities.EquipmentRarity EquipmentRarity;
         public EquipmentTypes.EquipmentType EquipmentType;
         public Skill Skill;

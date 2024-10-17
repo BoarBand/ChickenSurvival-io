@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using SurvivalChicken.SaveLoadDatas;
+using System;
 
 namespace SurvivalChicken.Controllers
 {
@@ -37,6 +38,21 @@ namespace SurvivalChicken.Controllers
             UpdateGemsView(_saveLoadData.Gems);
             UpdateCoinView(_saveLoadData.Coins);
             UpdateEnergyView(_saveLoadData.Energy);
+        }
+
+        public bool TrySpendCoins(int amount, Action success = null, Action failed = null)
+        {
+            if(_saveLoadData.Coins >= amount)
+            {
+                _saveLoadData.Coins -= amount;
+                success?.Invoke();
+                _saveLoadData.SaveGame();
+                UpdateCoinView(_saveLoadData.Coins);
+                return true;
+            }
+
+            failed?.Invoke();
+            return false;
         }
     }
 }

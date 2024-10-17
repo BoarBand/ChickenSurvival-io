@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 0ad3335e9d4cc40429913a696cc4f9f9, type: 3}
   Label: test6
-  Description: 
-  Value: 10
+  Description: Unusual ability that are made from stone
+  CommonSkillDescription: Increase damage +20%
+  RareSkillDescription: Increase damage +45%
+  EpicSkillDescription: Summons fireballs around the player
+  LegendarySkillDescription: Increase damage +100%
   EquipmentRarity: 1
   EquipmentType: 2
   Skill: {fileID: 0}

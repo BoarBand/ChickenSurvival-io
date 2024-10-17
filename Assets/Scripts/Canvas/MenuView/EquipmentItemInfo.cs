@@ -15,10 +15,21 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Image _frame;
         [SerializeField] private Image _icon;
         [SerializeField] private Image _topBG;
+        [SerializeField] private Image _valueTypeImg;
+        [SerializeField] private Sprite _damageIcon;
+        [SerializeField] private Sprite _healthIcon;
+        [SerializeField] private ValuesView _valuesView;
+        [SerializeField] private TextMeshProUGUI _costTxt;
         [SerializeField] private TextMeshProUGUI _labelTxt;
         [SerializeField] private TextMeshProUGUI _rarityTxt;
         [SerializeField] private TextMeshProUGUI _descriptionTxt;
         [SerializeField] private TextMeshProUGUI _levelTxt;
+        [SerializeField] private TextMeshProUGUI _commonSkillDescription;
+        [SerializeField] private TextMeshProUGUI _rareSkillDescription;
+        [SerializeField] private TextMeshProUGUI _epicSkillDescription;
+        [SerializeField] private TextMeshProUGUI _legendarySkillDescription;
+        [SerializeField] private TextMeshProUGUI _valueAddition;
+        [SerializeField] private TextMeshProUGUI _upgradeValueAddition;
 
         [Header("Buttons")]
         [SerializeField] private Button _selectButton;
@@ -61,8 +72,15 @@ namespace SurvivalChicken.Controllers
 
             gameObject.SetActive(true);
 
+            _descriptionTxt.text = equipmentParameters.Description;
+            _commonSkillDescription.text = equipmentParameters.CommonSkillDescription;
+            _rareSkillDescription.text = equipmentParameters.RareSkillDescription;
+            _epicSkillDescription.text = equipmentParameters.EpicSkillDescription;
+            _legendarySkillDescription.text = equipmentParameters.LegendarySkillDescription;
+
             UpdateIconsView(equipmentParameters);
             UpdateRarityView(equipmentParameters.EquipmentRarity);
+            UpdateAdditionValues(equipmentParameters);
         }
 
         public void Equip()
@@ -74,45 +92,61 @@ namespace SurvivalChicken.Controllers
 
         public void Upgrade()
         {
+            void Successful() => UpdateActions();
+
+            int cost = 100;
+
             if (EquipmentParameters is HelmetEquipmentParameters)
             {
-                _saveLoadData.HelmetUpgradeLevel++;
-                UpdateActions();
+                if(_valuesView.TrySpendCoins(cost, Successful))
+                {
+                    _saveLoadData.HelmetUpgradeLevel++;
+                }
                 return;
             }
 
             if (EquipmentParameters is ArmorEquipmentParameters)
             {
-                _saveLoadData.ArmorUpgradeLevel++;
-                UpdateActions();
+                if(_valuesView.TrySpendCoins(cost, Successful))
+                {
+                    _saveLoadData.ArmorUpgradeLevel++;
+                }
                 return;
             }
 
             if (EquipmentParameters is BootsEquipmentParameters)
             {
-                _saveLoadData.BootsUpgradeLevel++;
-                UpdateActions();
+                if(_valuesView.TrySpendCoins(cost, Successful))
+                {
+                    _saveLoadData.BootsUpgradeLevel++;
+                }
                 return;
             }
 
             if (EquipmentParameters is AttributeEquipmentParameters)
             {
-                _saveLoadData.AttributeUpgradeLevel++;
-                UpdateActions();
+                if(_valuesView.TrySpendCoins(cost, Successful))
+                {
+                    _saveLoadData.AttributeUpgradeLevel++;
+                }
                 return;
             }
 
             if (EquipmentParameters is WeaponModuleEquipmentParameters)
             {
-                _saveLoadData.WeaponModuleUpgradeLevel++;
-                UpdateActions();
+                if(_valuesView.TrySpendCoins(cost, Successful))
+                {
+                    _saveLoadData.WeaponModuleUpgradeLevel++;
+                }
                 return;
             }
 
             if (EquipmentParameters is PetEquipmentParameters)
             {
-                _saveLoadData.PetUpgradeLevel++;
-                UpdateActions();
+                if(_valuesView.TrySpendCoins(cost, Successful))
+                {
+                    _saveLoadData.PetUpgradeLevel++;
+                }
                 return;
             }
         }
@@ -123,6 +157,7 @@ namespace SurvivalChicken.Controllers
             UpdateIconsView(EquipmentParameters);
             _inventoryView.UpdateInventoryCellView(_inventoryView.PlayerParameters);
             _inventoryView.PlayerParameters.UpdateAdditionValues(_saveLoadData);
+            UpdateAdditionValues(EquipmentParameters);
         }
 
         public void Remove()
@@ -130,6 +165,56 @@ namespace SurvivalChicken.Controllers
             _inventoryView.RemoveEquipment(EquipmentParameters);
             EquipmentContainer.AddItem(EquipmentParameters);
             Disactivate();
+        }
+
+        private void UpdateAdditionValues(EquipmentParameters equipmentParameters)
+        {
+            if (equipmentParameters is HelmetEquipmentParameters)
+            {
+                _valueAddition.text = $"Health +{_saveLoadData.HelmetUpgradeLevel * equipmentParameters.Value}";
+                _upgradeValueAddition.text = $"Upgrade Health +{(_saveLoadData.HelmetUpgradeLevel + 1) * equipmentParameters.Value}";
+                _valueTypeImg.sprite = _healthIcon;
+                return;
+            }
+
+            if (equipmentParameters is ArmorEquipmentParameters)
+            {
+                _valueAddition.text = $"Health +{_saveLoadData.ArmorUpgradeLevel * equipmentParameters.Value}";
+                _upgradeValueAddition.text = $"Upgrade Health +{(_saveLoadData.ArmorUpgradeLevel + 1) * equipmentParameters.Value}";
+                _valueTypeImg.sprite = _healthIcon;
+                return;
+            }
+
+            if (equipmentParameters is BootsEquipmentParameters)
+            {
+                _valueAddition.text = $"Health +{_saveLoadData.BootsUpgradeLevel * equipmentParameters.Value}";
+                _upgradeValueAddition.text = $"Upgrade Health +{(_saveLoadData.BootsUpgradeLevel + 1) * equipmentParameters.Value}";
+                _valueTypeImg.sprite = _healthIcon;
+                return;
+            }
+
+            if (equipmentParameters is AttributeEquipmentParameters)
+            {
+                _valueAddition.text = $"Damage +{_saveLoadData.AttributeUpgradeLevel * equipmentParameters.Value}";
+                _upgradeValueAddition.text = $"Upgrade Damage +{(_saveLoadData.AttributeUpgradeLevel + 1) * equipmentParameters.Value}";
+                _valueTypeImg.sprite = _damageIcon;
+                return;
+            }
+
+            if (equipmentParameters is WeaponModuleEquipmentParameters)
+            {
+                _valueAddition.text = $"Damage +{_saveLoadData.WeaponModuleUpgradeLevel * equipmentParameters.Value}";
+                _upgradeValueAddition.text = $"Upgrade Damage +{(_saveLoadData.WeaponModuleUpgradeLevel + 1) * equipmentParameters.Value}";
+                return;
+            }
+
+            if (equipmentParameters is PetEquipmentParameters)
+            {
+                _valueAddition.text = $"Damage +{_saveLoadData.PetUpgradeLevel * equipmentParameters.Value}";
+                _upgradeValueAddition.text = $"Upgrade Damage +{(_saveLoadData.PetUpgradeLevel + 1) * equipmentParameters.Value}";
+                _valueTypeImg.sprite = _damageIcon;
+                return;
+            }
         }
 
         private void UpdateIconsView(EquipmentParameters equipmentParameters)
