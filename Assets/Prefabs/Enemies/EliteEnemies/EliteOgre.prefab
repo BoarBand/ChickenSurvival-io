@@ -45,8 +45,8 @@ GameObject:
   - component: {fileID: 4408930629764397708}
   - component: {fileID: 3026401774656071735}
   - component: {fileID: 7334974352521617440}
+  - component: {fileID: 7472687511952904049}
   - component: {fileID: 8650413700331721547}
-  - component: {fileID: 361947554616422914}
   - component: {fileID: 551462192339898309}
   - component: {fileID: 2017210750196811938}
   - component: {fileID: 7238125343307305866}
@@ -191,6 +191,25 @@ MonoBehaviour:
   _collider: {fileID: 2017210750196811938}
   _rigidbody: {fileID: 7238125343307305866}
   _animator: {fileID: 551462192339898309}
+--- !u!114 &7472687511952904049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040174106437574815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49d151fb16bb43e43b616094433d977c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyParameters: {fileID: 11400000, guid: bf9e974be5299b3459c3eaeba55c30e1, type: 2}
+  EliteEnemy: {fileID: 7334974352521617440}
+  Animator: {fileID: 551462192339898309}
+  _bullet: {fileID: 8415228261214394702, guid: adc1d78f3d2a8e844a758012d862e8e8, type: 3}
+  _shootPoint: {fileID: 2902081792443396221}
+  _bulletMoveSpeed: 0
+  _bulletLifetime: 1
 --- !u!114 &8650413700331721547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,21 +225,6 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 7278625813058980411}
   _flashColor: {r: 1, g: 1, b: 1, a: 1}
   _flashDuration: 0.8
---- !u!114 &361947554616422914
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040174106437574815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a8d41d410250ff4cbfddd8285ad2df6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  EnemyParameters: {fileID: 11400000, guid: bf9e974be5299b3459c3eaeba55c30e1, type: 2}
-  Enemy: {fileID: 7334974352521617440}
-  Animator: {fileID: 551462192339898309}
 --- !u!114 &551462192339898309
 MonoBehaviour:
   m_ObjectHideFlags: 0

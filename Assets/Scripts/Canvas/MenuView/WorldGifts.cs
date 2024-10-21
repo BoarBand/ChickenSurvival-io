@@ -19,9 +19,9 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Image[] _giftRays;
         [SerializeField] private WorldsSwitcher _worldsSwitcher;
 
-        private readonly int TimeToFirstGift = 2;
-        private readonly int TimeToSecondGift = 5;
-        private readonly int TimeToThirdGift = 15;
+        private readonly int TimeToFirstGift = 60;
+        private readonly int TimeToSecondGift = 300;
+        private readonly int TimeToThirdGift = 900;
 
         public void Initialize()
         {

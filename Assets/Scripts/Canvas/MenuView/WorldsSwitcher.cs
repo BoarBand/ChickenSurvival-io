@@ -30,6 +30,7 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private Sprite _lockPlayButtonSprite;
         [SerializeField] private string _lockPlayButtonTxt;
         [SerializeField] private string _unlockPlayButtonTxt;
+        [SerializeField] private Image _lockImg;
 
         public int CurrentSelectedWorld { get; private set; }
 
@@ -95,9 +96,11 @@ namespace SurvivalChicken.Controllers
             {
                 _playButton.image.sprite = _lockPlayButtonSprite;
                 _playButtonTxt.text = _lockPlayButtonTxt;
+                _lockImg.gameObject.SetActive(true);
                 return;
             }
 
+            _lockImg.gameObject.SetActive(false);
             _playButton.image.sprite = _unlockPlayButtonSprite;
             _playButtonTxt.text = _unlockPlayButtonTxt;
         }

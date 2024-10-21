@@ -40,7 +40,7 @@ namespace SurvivalChicken.SceneLoader
             gameObject.SetActive(true);
 
             Sequence sequence = DOTween.Sequence()
-                .Append(_slider.DOValue(1f, DelayTime))
+                .Append(_slider.DOValue(1f, DelayTime)).SetUpdate(true)
                 .AppendCallback(() => SceneManager.LoadScene(_sceneNum));
         }
     }

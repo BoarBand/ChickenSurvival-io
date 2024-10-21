@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 950
   Damage: 30
-  MoveSpeed: 1.25
-  AttackFrequency: 1.8
+  MoveSpeed: 1
+  AttackFrequency: 3

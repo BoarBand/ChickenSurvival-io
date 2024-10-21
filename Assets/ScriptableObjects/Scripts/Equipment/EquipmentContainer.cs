@@ -13,9 +13,16 @@ namespace SurvivalChicken.ScriptableObjects.EquipmentsParameters
 
         [field: SerializeField] public string FileName { get; set; }
 
+        public int ContainerLength => _equipmentItems.Count;
+
         public IEnumerable GetList()
         {
             return _equipmentItems;
+        }
+
+        public EquipmentParameters GetItemByIndex(int index)
+        {
+            return _equipmentItems[index];
         }
 
         public void AddItem(EquipmentParameters item)
@@ -26,6 +33,11 @@ namespace SurvivalChicken.ScriptableObjects.EquipmentsParameters
         public void RemoveItem(EquipmentParameters item)
         {
             _equipmentItems.Remove(item);
+        }
+
+        public void ClearList()
+        {
+            _equipmentItems.Clear();
         }
 
         public void Save()

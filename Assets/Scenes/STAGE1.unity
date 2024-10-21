@@ -693,6 +693,7 @@ MonoBehaviour:
   _timer: {fileID: 830504666}
   _statistics: {fileID: 1091846425}
   _saveLoadData: {fileID: 1671890997}
+  _firstLoadingTutorial: {fileID: 11400000, guid: fc980584dbfdcd54a8bd884c8ba9e4ab, type: 2}
   _diedImage: {fileID: 836270753}
   _diedTimeTxt: {fileID: 1411764511}
   _diedKillsTxt: {fileID: 778758160}
@@ -846,18 +847,6 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 44222565}
-          m_TargetAssemblyTypeName: SurvivalChicken.Controllers.GameOverView, Assembly-CSharp
-          m_MethodName: ResetTime
-          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16971,18 +16960,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 44222565}
-          m_TargetAssemblyTypeName: SurvivalChicken.Controllers.GameOverView, Assembly-CSharp
-          m_MethodName: ResetTime
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
 --- !u!114 &1190378880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23398,10 +23375,18 @@ MonoBehaviour:
   Coins: 0
   Gems: 0
   Energy: 100
-  WorldTimes: 00000000
+  HelmetUpgradeLevel: 1
+  ArmorUpgradeLevel: 1
+  BootsUpgradeLevel: 1
+  AttributeUpgradeLevel: 1
+  WeaponModuleUpgradeLevel: 1
+  PetUpgradeLevel: 1
+  StagePlayTimes: 0000000000000000
+  LockedWorlds: 0000000001000000
   _scriptableObjectsToSave:
   - {fileID: 11400000, guid: 6eb5c70afcc74d847bea646408cdf2d1, type: 2}
   - {fileID: 11400000, guid: 7fa4af754a9da0049a57b5b7beadbe7b, type: 2}
+  - {fileID: 11400000, guid: fc980584dbfdcd54a8bd884c8ba9e4ab, type: 2}
 --- !u!1 &1672291181
 GameObject:
   m_ObjectHideFlags: 0

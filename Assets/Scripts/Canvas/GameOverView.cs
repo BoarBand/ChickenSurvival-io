@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using SurvivalChicken.SaveLoadDatas;
+using SurvivalChicken.Tutorials;
 
 namespace SurvivalChicken.Controllers
 {
@@ -12,6 +13,7 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private TimerView _timer;
         [SerializeField] private StatisticsView _statistics;
         [SerializeField] private SaveLoadData _saveLoadData;
+        [SerializeField] private TutorialParameters _firstLoadingTutorial;
 
         [Header("Died Image")]
         [SerializeField] private GameObject _diedImage;
@@ -52,6 +54,9 @@ namespace SurvivalChicken.Controllers
             if (_gameResults)
                 return;
 
+            if (_firstLoadingTutorial != null)
+                _firstLoadingTutorial.Complete();
+
             _gameResults = true;
 
             int time = _timer.Time;
@@ -83,6 +88,9 @@ namespace SurvivalChicken.Controllers
         {
             if (_gameResults)
                 return;
+
+            if (_firstLoadingTutorial != null)
+                _firstLoadingTutorial.Complete();
 
             _gameResults = true;
 

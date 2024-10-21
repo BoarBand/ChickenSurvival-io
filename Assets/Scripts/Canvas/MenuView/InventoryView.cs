@@ -62,8 +62,10 @@ namespace SurvivalChicken.Controllers
 
         public void UpdateEquipmentItemsView()
         {
-            foreach (EquipmentItemView item in _equipmentItemViewsContainer)
-                item.UpdateView();
+            for (int i = 0; i < _equipmentItemViewsContainer.Count; i++)
+            {
+                _equipmentItemViewsContainer[i].Initialize(_equipmentContainer.GetItemByIndex(i), (i) => _equipmentItemInfo.Initialize(i, true));
+            }
 
             _hpViewTxt.text = PlayerParameters.TotalHealth.ToString();
             _totalDamageViewTxt.text = PlayerParameters.TotalDamage.ToString();

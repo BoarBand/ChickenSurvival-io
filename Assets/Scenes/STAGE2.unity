@@ -693,6 +693,7 @@ MonoBehaviour:
   _timer: {fileID: 830504666}
   _statistics: {fileID: 1091846425}
   _saveLoadData: {fileID: 1671890997}
+  _firstLoadingTutorial: {fileID: 0}
   _diedImage: {fileID: 836270753}
   _diedTimeTxt: {fileID: 1411764511}
   _diedKillsTxt: {fileID: 778758160}
@@ -846,18 +847,6 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 44222565}
-          m_TargetAssemblyTypeName: SurvivalChicken.Controllers.GameOverView, Assembly-CSharp
-          m_MethodName: ResetTime
-          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16969,18 +16958,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-        - m_Target: {fileID: 44222565}
-          m_TargetAssemblyTypeName: SurvivalChicken.Controllers.GameOverView, Assembly-CSharp
-          m_MethodName: ResetTime
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
 --- !u!114 &1190378880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17151,7 +17128,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Boss Bat
+  m_text: Boss Ogre
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
   m_sharedMaterial: {fileID: 7374927986402738804, guid: c1482dbce654844b9ba1c753cbea5d80, type: 2}
@@ -26142,7 +26119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13538c087668729499599e1503ef13e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bosses: {fileID: 3494765093958892745, guid: 952c0aa4e8b79c34e9bbf15f49a3b2d7, type: 3}
+  _bosses: {fileID: 3865138744783452769, guid: e586e2b008ee3284ebc90e9c853b2eb7, type: 3}
   _bossRing: {fileID: 1683680550}
   _spawnPoint: {fileID: 1177066037}
   _timer: {fileID: 830504666}

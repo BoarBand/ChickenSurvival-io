@@ -20,7 +20,7 @@ namespace SurvivalChicken.Spawner
         [SerializeField] private Slider _healthBar;
         [SerializeField] private Transform[] _corners;
 
-        private readonly int TimePointToSpawnBoss = 600;
+        private readonly int TimePointToSpawnBoss = 600; // 600
         private readonly float DelayToSpawn = 3f;
         
         private Coroutine _waitForSpawnBossCoroutine;

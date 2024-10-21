@@ -16,9 +16,9 @@ namespace SurvivalChicken.BossObject
             if (Health <= 0)
                 return;
             if (MoveDiraction.x < 0f)
-                transform.localScale = new Vector3(1f, 1f, 1f);
+                transform.localScale = new Vector3(2f, 2f, 1f);
             else if (MoveDiraction.x > 0f)
-                transform.localScale = new Vector3(-1f, 1f, 1f);
+                transform.localScale = new Vector3(-2f, 2f, 1f);
         }
     }
 }

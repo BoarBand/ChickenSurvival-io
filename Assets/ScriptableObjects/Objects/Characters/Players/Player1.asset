@@ -15,7 +15,7 @@ MonoBehaviour:
   Health: 350
   Damage: 5
   MoveSpeed: 2
-  TotalDamage: 335
+  TotalDamage: 5
   TotalHealth: 350
   CritDamageChance: 20
   CritDamageValue: 80

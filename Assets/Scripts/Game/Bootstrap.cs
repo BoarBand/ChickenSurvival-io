@@ -7,8 +7,6 @@ namespace SurvivalChicken.Bootstrap
 {
     public class Bootstrap : MonoBehaviour
     {
-        public static Bootstrap Instance;
-
         [SerializeField] private PlayerSpawner _playerSpawner;
         [SerializeField] private FeedSpawner _feedSpawner;
         [SerializeField] private EnemySpawner _enemySpawner;

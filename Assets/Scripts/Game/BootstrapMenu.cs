@@ -12,6 +12,7 @@ namespace SurvivalChicken.Bootstrap
         [SerializeField] private MenuWindowsSwitcher _menuWindowsSwitcher;
         [SerializeField] private InventoryView _inventoryView;
         [SerializeField] private SaveLoadData _saveLoadData;
+        [SerializeField] private SortEquipmentItems _sortEquipmentItems;
 
         private void Awake()
         {
@@ -23,6 +24,7 @@ namespace SurvivalChicken.Bootstrap
             _worldSwitcher.Initialize();
             _menuWindowsSwitcher.Initialize();
             _inventoryView.Initalize();
+            _sortEquipmentItems.Sort(SortEquipmentItems.SortType.Rarity);
         }
     }
 }
