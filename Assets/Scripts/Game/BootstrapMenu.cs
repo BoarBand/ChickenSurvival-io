@@ -1,6 +1,7 @@
 using UnityEngine;
 using SurvivalChicken.Controllers;
 using SurvivalChicken.SaveLoadDatas;
+using SurvivalChicken.DailyReward;
 
 namespace SurvivalChicken.Bootstrap
 {
@@ -13,6 +14,7 @@ namespace SurvivalChicken.Bootstrap
         [SerializeField] private InventoryView _inventoryView;
         [SerializeField] private SaveLoadData _saveLoadData;
         [SerializeField] private SortEquipmentItems _sortEquipmentItems;
+        [SerializeField] private DailyRewards _dailyRewards;
 
         private void Awake()
         {
@@ -23,6 +25,7 @@ namespace SurvivalChicken.Bootstrap
             _worldGifts.Initialize();
             _worldSwitcher.Initialize();
             _menuWindowsSwitcher.Initialize();
+            _dailyRewards.Initialize();
             _inventoryView.Initalize();
             _sortEquipmentItems.Sort(SortEquipmentItems.SortType.Rarity);
         }

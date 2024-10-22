@@ -14,6 +14,7 @@ namespace SurvivalChicken.SaveLoadDatas
         public int Coins = 0;
         public int Gems = 0;
         public int Energy = 100;
+        public int GoldKeys = 0;
 
         public int HelmetUpgradeLevel = 1;
         public int ArmorUpgradeLevel = 1;
@@ -27,6 +28,10 @@ namespace SurvivalChicken.SaveLoadDatas
         public int[,] OpenedWorldGifts = new int[2, 3];
 
         public int[] LockedWorlds = new int[2] { 0, 1 };
+
+        public int DailyRewardID = 0;
+
+        public int[] ClaimedDailyRewards = new int[7] { 0, 0, 0, 0, 0, 0, 0 };
 
         [SerializeField] private ScriptableObject[] _scriptableObjectsToSave;
 
@@ -52,6 +57,7 @@ namespace SurvivalChicken.SaveLoadDatas
                 saveData.Coins = Coins;
                 saveData.Gems = Gems;
                 saveData.Energy = Energy;
+                saveData.GoldKeys = GoldKeys;
                 saveData.ArmorUpgradeLevel = ArmorUpgradeLevel;
                 saveData.AttributeUpgradeLevel = AttributeUpgradeLevel;
                 saveData.BootsUpgradeLevel = BootsUpgradeLevel;
@@ -61,6 +67,8 @@ namespace SurvivalChicken.SaveLoadDatas
                 saveData.StagePlayTimes = StagePlayTimes;
                 saveData.OpenedWorldGifts = OpenedWorldGifts;
                 saveData.LockedWorlds = LockedWorlds;
+                saveData.DailyRewardID = DailyRewardID;
+                saveData.ClaimedDailyRewards = ClaimedDailyRewards;
                 bf.Serialize(file, saveData);
             }
 
@@ -81,6 +89,7 @@ namespace SurvivalChicken.SaveLoadDatas
                 Coins = saveData.Coins;
                 Gems = saveData.Gems;
                 Energy = saveData.Energy;
+                GoldKeys = saveData.GoldKeys;
                 ArmorUpgradeLevel = saveData.ArmorUpgradeLevel;
                 AttributeUpgradeLevel = saveData.AttributeUpgradeLevel;
                 BootsUpgradeLevel = saveData.BootsUpgradeLevel;
@@ -90,6 +99,8 @@ namespace SurvivalChicken.SaveLoadDatas
                 StagePlayTimes = saveData.StagePlayTimes;
                 OpenedWorldGifts = saveData.OpenedWorldGifts;
                 LockedWorlds = saveData.LockedWorlds;
+                DailyRewardID = saveData.DailyRewardID;
+                ClaimedDailyRewards = saveData.ClaimedDailyRewards;
             }
 
             foreach (ISaveLoadPersistentData saveLoadPersistentData in _saveLoadPersistentDatas)
@@ -106,9 +117,15 @@ namespace SurvivalChicken.SaveLoadDatas
             Coins = 0;
             Gems = 0;
             Energy = 100;
+            GoldKeys = 0;
+
+            DailyRewardID = 0;
 
             for (int i = 0; i < StagePlayTimes.Length; i++)
                 StagePlayTimes[i] = 0;
+
+            for (int i = 0; i < ClaimedDailyRewards.Length; i++)
+                ClaimedDailyRewards[i] = 0;
 
             for (int i = 0; i < OpenedWorldGifts.GetLength(0); i++)
                 for (int j = 0; j < OpenedWorldGifts.GetLength(1); j++)
@@ -129,6 +146,7 @@ namespace SurvivalChicken.SaveLoadDatas
         public int Coins;
         public int Gems;
         public int Energy;
+        public int GoldKeys;
 
         public int HelmetUpgradeLevel;
         public int ArmorUpgradeLevel;
@@ -142,5 +160,9 @@ namespace SurvivalChicken.SaveLoadDatas
         public int[,] OpenedWorldGifts = new int[2, 3];
 
         public int[] LockedWorlds = new int[2];
+
+        public int DailyRewardID;
+
+        public int[] ClaimedDailyRewards = new int[7];
     }
 }
