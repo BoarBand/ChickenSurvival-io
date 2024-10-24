@@ -33,6 +33,10 @@ namespace SurvivalChicken.SaveLoadDatas
 
         public int[] ClaimedDailyRewards = new int[7] { 0, 0, 0, 0, 0, 0, 0 };
 
+        public int CurrentDayToGetDailyReward = 0;
+
+        public int NextDayToGetDailyReward = 0;
+
         [SerializeField] private ScriptableObject[] _scriptableObjectsToSave;
 
         private List<ISaveLoadPersistentData> _saveLoadPersistentDatas = new List<ISaveLoadPersistentData>();
@@ -69,6 +73,8 @@ namespace SurvivalChicken.SaveLoadDatas
                 saveData.LockedWorlds = LockedWorlds;
                 saveData.DailyRewardID = DailyRewardID;
                 saveData.ClaimedDailyRewards = ClaimedDailyRewards;
+                saveData.CurrentDayToGetDailyReward = CurrentDayToGetDailyReward;
+                saveData.NextDayToGetDailyReward = NextDayToGetDailyReward;
                 bf.Serialize(file, saveData);
             }
 
@@ -101,6 +107,8 @@ namespace SurvivalChicken.SaveLoadDatas
                 LockedWorlds = saveData.LockedWorlds;
                 DailyRewardID = saveData.DailyRewardID;
                 ClaimedDailyRewards = saveData.ClaimedDailyRewards;
+                CurrentDayToGetDailyReward = saveData.CurrentDayToGetDailyReward;
+                NextDayToGetDailyReward = saveData.NextDayToGetDailyReward;
             }
 
             foreach (ISaveLoadPersistentData saveLoadPersistentData in _saveLoadPersistentDatas)
@@ -120,6 +128,10 @@ namespace SurvivalChicken.SaveLoadDatas
             GoldKeys = 0;
 
             DailyRewardID = 0;
+
+            CurrentDayToGetDailyReward = 0;
+
+            NextDayToGetDailyReward = 0;
 
             for (int i = 0; i < StagePlayTimes.Length; i++)
                 StagePlayTimes[i] = 0;
@@ -164,5 +176,9 @@ namespace SurvivalChicken.SaveLoadDatas
         public int DailyRewardID;
 
         public int[] ClaimedDailyRewards = new int[7];
+
+        public int CurrentDayToGetDailyReward = 0;
+
+        public int NextDayToGetDailyReward = 0;
     }
 }

@@ -41,9 +41,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1179456799934795493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b29d3705583d624fac0dfd5bc444034, type: 3}
+  m_Script: {fileID: 11500000, guid: 72f9a8f37882f964ca5e0f9bfaf89256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Icon>k__BackingField: {fileID: 21300000, guid: 6d034811652a84633bc8c63d22ce5574, type: 3}
-  <Amount>k__BackingField: 20
+  <Icon>k__BackingField: {fileID: 21300000, guid: 7b6827dc950bb48278ef822641f23849, type: 3}
   <EquipmentRarity>k__BackingField: 3

@@ -86,7 +86,6 @@ namespace SurvivalChicken.Controllers
         public void Equip()
         {
             _inventoryView.SetEquipment(EquipmentParameters);
-            EquipmentContainer.RemoveItem(EquipmentParameters);
             Disactivate();
         }
 

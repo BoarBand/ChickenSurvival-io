@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using SurvivalChicken.SaveLoadDatas;
@@ -11,7 +12,8 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private CollectedPanelView _collectedPanelView;
         [SerializeField] private ValuesView _valuesView;
         [SerializeField] private Image[] _giftImgs;
-        [SerializeField] private CollectItem[] _collectItems;
+        [SerializeField] private CollectItem _coinCollectItems;
+        [SerializeField] private CollectItem _gemCollectItems;
         [SerializeField] private WorldsSwitcher _worldSwitcher;
         [SerializeField] private Sprite _openGift;
         [SerializeField] private Sprite _closeGift;
@@ -32,12 +34,19 @@ namespace SurvivalChicken.Controllers
         {
             int worldNum = _worldsSwitcher.CurrentSelectedWorld;
 
+            int coins;
+            int gems;
+
             if (!_giftRays[0].gameObject.activeInHierarchy && !_giftRays[1].gameObject.activeInHierarchy && !_giftRays[2].gameObject.activeInHierarchy)
                 return;
 
             if (_saveLoadData.StagePlayTimes[worldNum] > TimeToThirdGift)
             {
-                _collectedPanelView.Initialize(CreateCollectItem(_collectItems[0], 300), CreateCollectItem(_collectItems[1], 30));
+                coins = 300;
+                gems = 30;
+
+                _collectedPanelView.Initialize(CreateCollectItem(_coinCollectItems, coins, () => _saveLoadData.Coins += coins), 
+                    CreateCollectItem(_gemCollectItems, gems, () => { _saveLoadData.Gems += gems; }));
                 _saveLoadData.OpenedWorldGifts[worldNum, 2] = 1;
                 _saveLoadData.OpenedWorldGifts[worldNum, 1] = 1;
                 _saveLoadData.OpenedWorldGifts[worldNum, 0] = 1;
@@ -45,14 +54,22 @@ namespace SurvivalChicken.Controllers
 
             if (_saveLoadData.StagePlayTimes[worldNum] > TimeToSecondGift && _saveLoadData.StagePlayTimes[worldNum] < TimeToThirdGift)
             {
-                _collectedPanelView.Initialize(CreateCollectItem(_collectItems[0], 200), CreateCollectItem(_collectItems[1], 20));
+                coins = 200;
+                gems = 20;
+
+                _collectedPanelView.Initialize(CreateCollectItem(_coinCollectItems, coins, () => _saveLoadData.Coins += coins),
+                    CreateCollectItem(_gemCollectItems, gems, () => _saveLoadData.Gems += gems));
                 _saveLoadData.OpenedWorldGifts[worldNum, 1] = 1;
                 _saveLoadData.OpenedWorldGifts[worldNum, 0] = 1;
             }
 
             if (_saveLoadData.StagePlayTimes[worldNum] > TimeToFirstGift && _saveLoadData.StagePlayTimes[worldNum] < TimeToSecondGift)
             {
-                _collectedPanelView.Initialize(CreateCollectItem(_collectItems[0], 100), CreateCollectItem(_collectItems[1], 10));
+                coins = 100;
+                gems = 10;
+
+                _collectedPanelView.Initialize(CreateCollectItem(_coinCollectItems, coins, () => _saveLoadData.Coins += coins), 
+                    CreateCollectItem(_gemCollectItems, gems, () => _saveLoadData.Gems += gems));
                 _saveLoadData.OpenedWorldGifts[worldNum, 0] = 1;
             }
 
@@ -61,10 +78,10 @@ namespace SurvivalChicken.Controllers
             UpdateView(_saveLoadData.StagePlayTimes[worldNum]);
         }
 
-        private ICollect CreateCollectItem(CollectItem collectItem, int amount)
+        private ICollect CreateCollectItem(CollectItem collectItem, int amount, Action collected)
         {
             CollectItem item = Instantiate(collectItem);
-            item.Initialize(_saveLoadData, amount);
+            item.Initialize(_saveLoadData, amount, collected);
             return item;
         }
 

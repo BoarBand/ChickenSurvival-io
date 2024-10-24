@@ -18,6 +18,7 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private AllEquipmentItemsContainer _allItemsContainer;
         [SerializeField] private EquipmentContainer _equipmentContainer;
         [SerializeField] private SaveLoadData _saveLoadData;
+        [SerializeField] private SortEquipmentItems _sortEquipmentItems;
         [SerializeField] private InventoryView _inventoryView;
 
         [Header("Rarity Frames")]
@@ -63,6 +64,8 @@ namespace SurvivalChicken.Controllers
             _equipmentContainer.AddItem(equipmentParameters);
 
             _inventoryView.CreateItemView(equipmentParameters);
+
+            _sortEquipmentItems.SortBySelected();
 
             _saveLoadData.SaveGame();
 

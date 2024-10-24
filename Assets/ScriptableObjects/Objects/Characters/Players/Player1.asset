@@ -16,7 +16,7 @@ MonoBehaviour:
   Damage: 5
   MoveSpeed: 2
   TotalDamage: 5
-  TotalHealth: 350
+  TotalHealth: 370
   CritDamageChance: 20
   CritDamageValue: 80
   InitialAbility: {fileID: 11400000, guid: 5fcca2878751f7f4fa4cc4d5d326a95f, type: 2}
