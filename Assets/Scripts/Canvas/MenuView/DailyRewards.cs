@@ -50,6 +50,8 @@ namespace SurvivalChicken.DailyReward
 
         public void Initialize()
         {
+            _root.gameObject.SetActive(true);
+
             if (CheckForDailyReward())
             {
                 if(_saveLoadData.NextDayToGetDailyReward > 0)
@@ -60,6 +62,8 @@ namespace SurvivalChicken.DailyReward
             if(_saveLoadData.ClaimedDailyRewards[_saveLoadData.DailyRewardID] == 1)
             {
                 _tip.gameObject.SetActive(true);
+
+                _root.gameObject.SetActive(false);
 
                 if (_claimButtonTween != null)
                     _claimButtonTween.Kill();

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 21
   RecoveryTime: 2
-  Level: 5
+  Level: 0
   MaxLevel: 5
   MinLevel: 0
   Icon: {fileID: 21300000, guid: 2ce7d4f26886e14489abd6da0283422e, type: 3}

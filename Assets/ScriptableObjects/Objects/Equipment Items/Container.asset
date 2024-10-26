@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _equipmentItems:
   - {fileID: 11400000, guid: 26bb745989da09647a6a43ca0fa1cb12, type: 2}
+  - {fileID: 11400000, guid: fb3a5d0bcec668a48bca3f2aab22f1f9, type: 2}
   - {fileID: 11400000, guid: 86ba2a576d27eda4eaca207c9cca449e, type: 2}
   - {fileID: 11400000, guid: 25d199b46ce1fb147b2bd5332ea61a59, type: 2}
-  - {fileID: 11400000, guid: fb3a5d0bcec668a48bca3f2aab22f1f9, type: 2}
   - {fileID: 11400000, guid: 82bdf7fa65fce9741b626c3d3795e03d, type: 2}
   <FileName>k__BackingField: EquipmentContainer.json

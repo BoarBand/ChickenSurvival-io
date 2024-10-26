@@ -31,7 +31,7 @@ namespace SurvivalChicken.Controllers
 
         private bool _gameResults = false;
 
-        private readonly int TimeToInvokeVictoryImage = 900;
+        private readonly int TimeToInvokeVictoryImage = 900; // 900
 
         private void Awake()
         {
