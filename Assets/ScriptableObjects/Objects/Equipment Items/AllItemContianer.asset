@@ -12,16 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bad2a71fba8269f4794402164829e14d, type: 3}
   m_Name: AllItemContianer
   m_EditorClassIdentifier: 
-  ChanceToGetCommonItem: 100
-  ChanceToGetRareItem: 50
-  ChanceToGetEpicItem: 15
-  ChanceToGetLegendaryItem: 5
   CommonItems:
-  - {fileID: 11400000, guid: 82bdf7fa65fce9741b626c3d3795e03d, type: 2}
+  - {fileID: 11400000, guid: 7edca11631766814d8e5197cdf40f6a9, type: 2}
+  - {fileID: 11400000, guid: 5535d8ec3b12ab04caa78dcd5008979f, type: 2}
+  - {fileID: 11400000, guid: c5c5e1e3e53cb8d4b93dc4d9a4537df8, type: 2}
   RareItems:
-  - {fileID: 11400000, guid: fb3a5d0bcec668a48bca3f2aab22f1f9, type: 2}
+  - {fileID: 11400000, guid: 6afdce210fda4d943b559868edd64704, type: 2}
+  - {fileID: 11400000, guid: 77a4466f226e8334c952f8aff3bbb2e2, type: 2}
+  - {fileID: 11400000, guid: dd226cbf4108f98408a989bd1d8a4a0d, type: 2}
   EpicItems:
-  - {fileID: 11400000, guid: 26bb745989da09647a6a43ca0fa1cb12, type: 2}
-  - {fileID: 11400000, guid: 86ba2a576d27eda4eaca207c9cca449e, type: 2}
-  - {fileID: 11400000, guid: 25d199b46ce1fb147b2bd5332ea61a59, type: 2}
-  LegendaryItems: []
+  - {fileID: 11400000, guid: ba12d9fdb79428b4ebc88ccb3b6c9415, type: 2}
+  - {fileID: 11400000, guid: 56dad5443a21a604090399e96d721e90, type: 2}
+  - {fileID: 11400000, guid: 9720b937c7fda0a46bb3b1d507da0934, type: 2}
+  LegendaryItems:
+  - {fileID: 11400000, guid: 7258ec0ac9e3af9429a49952bdad7109, type: 2}
+  - {fileID: 11400000, guid: 806412395c9fe304bbca6f4428c4388b, type: 2}
+  - {fileID: 11400000, guid: 276a38fdfba6cb54b990d9f37e24cd9a, type: 2}

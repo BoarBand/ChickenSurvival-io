@@ -13,7 +13,8 @@ namespace SurvivalChicken.Skills
 
         private int _maxHealth;
 
-        private Coroutine _healthBuffCoroutine;
+        private Coroutine _healthBuffRareCoroutine;
+        private Coroutine _healthBuffLegendaryCoroutine;
 
         public override void Initialize(EquipmentRarities.EquipmentRarity equipmentRarity)
         {
@@ -29,9 +30,9 @@ namespace SurvivalChicken.Skills
 
         public override void InvokeRareAction()
         {
-            if (_healthBuffCoroutine != null)
-                StopCoroutine(_healthBuffCoroutine);
-            _healthBuffCoroutine = StartCoroutine(ApplyHealthBuffRare());
+            if (_healthBuffRareCoroutine != null)
+                StopCoroutine(_healthBuffRareCoroutine);
+            _healthBuffRareCoroutine = StartCoroutine(ApplyHealthBuffRare());
         }
 
         public override void InvokeEpicAction()
@@ -41,7 +42,9 @@ namespace SurvivalChicken.Skills
 
         public override void InvokeLegendaryAction()
         {
-            //empty
+            if (_healthBuffLegendaryCoroutine != null)
+                StopCoroutine(_healthBuffLegendaryCoroutine);
+            _healthBuffLegendaryCoroutine = StartCoroutine(ApplyHealthBuffLegendary());
         }
 
         private IEnumerator ApplyHealthBuffRare()

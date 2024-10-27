@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ae629e79f8ce64f893f711903d1d4f, type: 3}
+  m_Name: SpeedBootCommon
+  m_EditorClassIdentifier: 
+  Icon: {fileID: -459324180, guid: 4d263cac195795b4786cb12d9cb7f670, type: 3}
+  Label: Speed Boots
+  Description: Boots that greatly increase your speed
+  CommonSkillDescription: Increase movement speed by 5%
+  RareSkillDescription: Increase movement speed by 9%
+  EpicSkillDescription: Every 150 kills you get +30% speed for 5 seconds
+  LegendarySkillDescription: Every 150 kills you get +30% speed for 10 seconds
+  EquipmentRarity: 1
+  EquipmentType: 2
+  Skill: {fileID: 0}

@@ -163,9 +163,9 @@ namespace SurvivalChicken.DailyReward
         private void InitializeRewards()
         {
             _rewardsByDays.Add(0, (_coinCollectItem, 500, () => _saveLoadData.Coins += 500));
-            _rewardsByDays.Add(1, (_gemCollectItem, 50, () => _saveLoadData.Gems += 50));
+            _rewardsByDays.Add(1, (_gemCollectItem, 100, () => _saveLoadData.Gems += 100));
             _rewardsByDays.Add(2, (_goldKeyCollectItem, 1, () => _saveLoadData.GoldKeys += 1));
-            _rewardsByDays.Add(3, (_gemCollectItem, 150, () => _saveLoadData.Gems += 150));
+            _rewardsByDays.Add(3, (_gemCollectItem, 300, () => _saveLoadData.Gems += 300));
             _rewardsByDays.Add(4, (_coinCollectItem, 3000, () => _saveLoadData.Coins += 3000));
             _rewardsByDays.Add(5, (_goldKeyCollectItem, 5, () => _saveLoadData.GoldKeys += 5));
             _rewardsByDays.Add(6, (_equipmentCollectItem, 1, () => 

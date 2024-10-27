@@ -45,9 +45,9 @@ namespace SurvivalChicken.Controllers
             if(_saveLoadData.Coins >= amount)
             {
                 _saveLoadData.Coins -= amount;
-                success?.Invoke();
                 _saveLoadData.SaveGame();
                 UpdateCoinView(_saveLoadData.Coins);
+                success?.Invoke();
                 return true;
             }
 

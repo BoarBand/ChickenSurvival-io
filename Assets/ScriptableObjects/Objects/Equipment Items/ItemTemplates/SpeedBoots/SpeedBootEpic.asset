@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7ae629e79f8ce64f893f711903d1d4f, type: 3}
-  m_Name: test3
+  m_Name: SpeedBootEpic
   m_EditorClassIdentifier: 
-  Icon: {fileID: 21300000, guid: 0ad3335e9d4cc40429913a696cc4f9f9, type: 3}
-  Label: test6
-  Description: Unusual ability that are made from stone
-  CommonSkillDescription: Increase damage +20%
-  RareSkillDescription: Increase damage +45%
-  EpicSkillDescription: Summons fireballs around the player
-  LegendarySkillDescription: Increase damage +100%
+  Icon: {fileID: -459324180, guid: 4d263cac195795b4786cb12d9cb7f670, type: 3}
+  Label: Speed Boots
+  Description: Boots that greatly increase your speed
+  CommonSkillDescription: Increase movement speed by 5%
+  RareSkillDescription: Increase movement speed by 9%
+  EpicSkillDescription: Every 150 kills you get +30% speed for 5 seconds
+  LegendarySkillDescription: Every 150 kills you get +30% speed for 10 seconds
   EquipmentRarity: 3
   EquipmentType: 2
   Skill: {fileID: 0}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebcfd5367941b1941bee99db5f8f5933, type: 3}
+  m_Name: AttackAttributeCommon
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 1975334617, guid: 60a9753d1abf7474da985e04fe86042a, type: 3}
+  Label: Attack Attribute
+  Description: An attribute that will definitely increase your combat power
+  CommonSkillDescription: Increase player total damage +5%
+  RareSkillDescription: Increase player total damage +8%
+  EpicSkillDescription: Every 100 kills increase damage by 20% for 5 seconds
+  LegendarySkillDescription: Every 100 kills increase damage by 20% for 10 seconds
+  EquipmentRarity: 1
+  EquipmentType: 3
+  Skill: {fileID: 1662957458596854870, guid: 64108e5553c77b94cac23dd83a902c33, type: 3}

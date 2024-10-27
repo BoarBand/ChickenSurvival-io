@@ -2,6 +2,7 @@ using UnityEngine;
 using SurvivalChicken.Spawner;
 using SurvivalChicken.Controllers;
 using SurvivalChicken.SaveLoadDatas;
+using SurvivalChicken.Tutorials;
 
 namespace SurvivalChicken.Bootstrap
 {
@@ -19,6 +20,7 @@ namespace SurvivalChicken.Bootstrap
         [SerializeField] private AbilitiesSelector _abilitiesSelector;
         [SerializeField] private BoostItemsSpawner _boostItemsSpawner;
         [SerializeField] private SaveLoadData _saveLoadData;
+        [SerializeField] private JoystickTutorial _joystickTutorial;
 
         private void Awake()
         {
@@ -35,6 +37,9 @@ namespace SurvivalChicken.Bootstrap
             _timerView.Initialize();
             _abilitiesSelector.ResetAllAbilities();
             _abilitiesSelector.Initialize();
+
+            if(_joystickTutorial != null)
+                _joystickTutorial.Initialize();
         }
     }
 }

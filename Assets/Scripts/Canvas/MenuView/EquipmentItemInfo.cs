@@ -30,6 +30,7 @@ namespace SurvivalChicken.Controllers
         [SerializeField] private TextMeshProUGUI _legendarySkillDescription;
         [SerializeField] private TextMeshProUGUI _valueAddition;
         [SerializeField] private TextMeshProUGUI _upgradeValueAddition;
+        [SerializeField] private Transform _levelUpNotification;
 
         [Header("Buttons")]
         [SerializeField] private Button _selectButton;
@@ -78,6 +79,7 @@ namespace SurvivalChicken.Controllers
             _epicSkillDescription.text = equipmentParameters.EpicSkillDescription;
             _legendarySkillDescription.text = equipmentParameters.LegendarySkillDescription;
 
+            UpdateCost(out _);
             UpdateIconsView(equipmentParameters);
             UpdateRarityView(equipmentParameters.EquipmentRarity);
             UpdateAdditionValues(equipmentParameters);
@@ -91,15 +93,21 @@ namespace SurvivalChicken.Controllers
 
         public void Upgrade()
         {
-            void Successful() => UpdateActions();
+            void Successful() 
+            {
+                _levelUpNotification.gameObject.SetActive(false);
+                _levelUpNotification.gameObject.SetActive(true);
+            }
 
-            int cost = 100;
+            UpdateCost(out int cost);
 
             if (EquipmentParameters is HelmetEquipmentParameters)
             {
                 if(_valuesView.TrySpendCoins(cost, Successful))
                 {
                     _saveLoadData.HelmetUpgradeLevel++;
+                    UpdateActions();
+                    UpdateCost(out cost);
                 }
                 return;
             }
@@ -109,6 +117,8 @@ namespace SurvivalChicken.Controllers
                 if(_valuesView.TrySpendCoins(cost, Successful))
                 {
                     _saveLoadData.ArmorUpgradeLevel++;
+                    UpdateActions();
+                    UpdateCost(out cost);
                 }
                 return;
             }
@@ -118,6 +128,8 @@ namespace SurvivalChicken.Controllers
                 if(_valuesView.TrySpendCoins(cost, Successful))
                 {
                     _saveLoadData.BootsUpgradeLevel++;
+                    UpdateActions();
+                    UpdateCost(out cost);
                 }
                 return;
             }
@@ -127,6 +139,8 @@ namespace SurvivalChicken.Controllers
                 if(_valuesView.TrySpendCoins(cost, Successful))
                 {
                     _saveLoadData.AttributeUpgradeLevel++;
+                    UpdateActions();
+                    UpdateCost(out cost);
                 }
                 return;
             }
@@ -136,6 +150,8 @@ namespace SurvivalChicken.Controllers
                 if(_valuesView.TrySpendCoins(cost, Successful))
                 {
                     _saveLoadData.WeaponModuleUpgradeLevel++;
+                    UpdateActions();
+                    UpdateCost(out cost);
                 }
                 return;
             }
@@ -145,6 +161,8 @@ namespace SurvivalChicken.Controllers
                 if(_valuesView.TrySpendCoins(cost, Successful))
                 {
                     _saveLoadData.PetUpgradeLevel++;
+                    UpdateActions();
+                    UpdateCost(out cost);
                 }
                 return;
             }
@@ -164,6 +182,61 @@ namespace SurvivalChicken.Controllers
             EquipmentContainer.AddItem(EquipmentParameters);
             _inventoryView.RemoveEquipment(EquipmentParameters);
             Disactivate();
+        }
+
+        public void FastUpgrade()
+        {
+            for (int i = 0; i < 5; i++)
+                Upgrade();
+        }
+
+        private void UpdateCost(out int cost)
+        {
+            int defaultCost = 100;
+
+            if (EquipmentParameters is HelmetEquipmentParameters)
+            {
+                cost = defaultCost * _saveLoadData.HelmetUpgradeLevel;
+                _costTxt.text = cost.ToString();
+                return;
+            }
+
+            if (EquipmentParameters is ArmorEquipmentParameters)
+            {
+                cost = defaultCost * _saveLoadData.ArmorUpgradeLevel;
+                _costTxt.text = cost.ToString();
+                return;
+            }
+
+            if (EquipmentParameters is BootsEquipmentParameters)
+            {
+                cost = defaultCost * _saveLoadData.BootsUpgradeLevel;
+                _costTxt.text = cost.ToString();
+                return;
+            }
+
+            if (EquipmentParameters is AttributeEquipmentParameters)
+            {
+                cost = defaultCost * _saveLoadData.AttributeUpgradeLevel;
+                _costTxt.text = cost.ToString();
+                return;
+            }
+
+            if (EquipmentParameters is WeaponModuleEquipmentParameters)
+            {
+                cost = defaultCost * _saveLoadData.WeaponModuleUpgradeLevel;
+                _costTxt.text = cost.ToString();
+                return;
+            }
+
+            if (EquipmentParameters is PetEquipmentParameters)
+            {
+                cost = defaultCost * _saveLoadData.PetUpgradeLevel;
+                _costTxt.text = cost.ToString();
+                return;
+            }
+
+            cost = defaultCost;
         }
 
         private void UpdateAdditionValues(EquipmentParameters equipmentParameters)

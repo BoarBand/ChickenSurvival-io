@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e351bf5ed4005846aa05d7374436bb2, type: 3}
+  m_Name: HealthArmorEpic
+  m_EditorClassIdentifier: 
+  Icon: {fileID: 1207859815, guid: 60a9753d1abf7474da985e04fe86042a, type: 3}
+  Label: Health Armor
+  Description: Powerful armor that will fight for your health
+  CommonSkillDescription: Increase player health +20%
+  RareSkillDescription: Every 30 seconds heal player by 50
+  EpicSkillDescription: Increase player health +40%
+  LegendarySkillDescription: If player health is less then 50% heal player by 50
+  EquipmentRarity: 3
+  EquipmentType: 1
+  Skill: {fileID: 5937682735081814701, guid: 33b1c12bc81ad7048a2e43b8e5a331b5, type: 3}

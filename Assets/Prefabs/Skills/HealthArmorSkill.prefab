@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acbaa4bf9518144ca363fd43c3c6093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthBuffInterval: 15
+  _healthBuffIntervalRare: 25
+  _healthBuffIntervalLegendary: 15
   _healValue: 50

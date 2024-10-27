@@ -45,5 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageBuffDuration: 5
-  _increasePercent: 2
+  _increasePercent: 20
   _neededKills: 100
