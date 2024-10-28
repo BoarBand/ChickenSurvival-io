@@ -95,10 +95,10 @@ MonoBehaviour:
   _icon: {fileID: 2497087688588943484}
   _typeIcon: {fileID: 2931151679015528111}
   _frame: {fileID: 894716151624369872}
-  _commonFrame: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
-  _rareFrame: {fileID: 21300000, guid: e6eea4f7cbb9f46f79c0fe06180fa5b3, type: 3}
-  _epicFrame: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
-  _legendaryFrame: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  _commonFrame: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
+  _rareFrame: {fileID: 21300000, guid: 15e7f349b5ac5d54984aeb631cdc5d6c, type: 3}
+  _epicFrame: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
+  _legendaryFrame: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
   _helmetIcon: {fileID: 21300000, guid: b1d50cb49035c459c8272b17e4f772b7, type: 3}
   _armorIcon: {fileID: 21300000, guid: 8e2918f58ae86404ba78fe9ce7d62ebf, type: 3}
   _bootsIcon: {fileID: 21300000, guid: f924599efe4d14ebdbd19150bc821595, type: 3}

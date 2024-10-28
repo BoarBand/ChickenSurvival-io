@@ -1319,10 +1319,10 @@ MonoBehaviour:
   - {fileID: 106294858}
   _iconImg: {fileID: 1410888967}
   _frameImg: {fileID: 683784486}
-  _commonFrame: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
-  _rareFrame: {fileID: 21300000, guid: e6eea4f7cbb9f46f79c0fe06180fa5b3, type: 3}
-  _epicFrame: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
-  _legendaryFrame: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  _commonFrame: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
+  _rareFrame: {fileID: 21300000, guid: 15e7f349b5ac5d54984aeb631cdc5d6c, type: 3}
+  _epicFrame: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
+  _legendaryFrame: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
   _coinCollectItem: {fileID: 2081085514080402272, guid: e136370adda79d648bb1fb1373912d9a, type: 3}
   _gemCollectItem: {fileID: 6424833312420828541, guid: 6340bc5a8d3ea5045bb6be34fc350a0d, type: 3}
   _goldKeyCollectItem: {fileID: 6424833312420828541, guid: e8b60210571cd7a4881efdfdf91fae0a, type: 3}
@@ -6254,10 +6254,10 @@ MonoBehaviour:
   _levelUpNotification: {fileID: 334568067}
   _selectButton: {fileID: 1857923741}
   _removeButton: {fileID: 1798237649}
-  _commonFrame: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
-  _rareFrame: {fileID: 21300000, guid: e6eea4f7cbb9f46f79c0fe06180fa5b3, type: 3}
-  _epicFrame: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
-  _legendaryFrame: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  _commonFrame: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
+  _rareFrame: {fileID: 21300000, guid: 15e7f349b5ac5d54984aeb631cdc5d6c, type: 3}
+  _epicFrame: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
+  _legendaryFrame: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
   _helmetIcon: {fileID: 21300000, guid: b1d50cb49035c459c8272b17e4f772b7, type: 3}
   _armorIcon: {fileID: 21300000, guid: bf6f75e5b2a5b4e64af8cb3a15a5b0ae, type: 3}
   _bootsIcon: {fileID: 21300000, guid: f924599efe4d14ebdbd19150bc821595, type: 3}
@@ -7065,7 +7065,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -80, y: 0}
+  m_SizeDelta: {x: -80, y: -80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &272402690
 MonoBehaviour:
@@ -8287,7 +8287,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10382,10 +10382,10 @@ MonoBehaviour:
   _levelTxt: {fileID: 1787520732}
   _equipmentType: 5
   _defaultFrame: {fileID: 21300000, guid: dd77367546bf4433dbbb2317a935df54, type: 3}
-  _commonFrame: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
-  _rareFrame: {fileID: 21300000, guid: e6eea4f7cbb9f46f79c0fe06180fa5b3, type: 3}
-  _epicFrame: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
-  _legendaryFrame: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  _commonFrame: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
+  _rareFrame: {fileID: 21300000, guid: 15e7f349b5ac5d54984aeb631cdc5d6c, type: 3}
+  _epicFrame: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
+  _legendaryFrame: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
 --- !u!114 &368268183
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18932,7 +18932,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -27783,10 +27783,10 @@ MonoBehaviour:
   _levelTxt: {fileID: 673981172}
   _equipmentType: 1
   _defaultFrame: {fileID: 21300000, guid: dd77367546bf4433dbbb2317a935df54, type: 3}
-  _commonFrame: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
-  _rareFrame: {fileID: 21300000, guid: e6eea4f7cbb9f46f79c0fe06180fa5b3, type: 3}
-  _epicFrame: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
-  _legendaryFrame: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  _commonFrame: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
+  _rareFrame: {fileID: 21300000, guid: 15e7f349b5ac5d54984aeb631cdc5d6c, type: 3}
+  _epicFrame: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
+  _legendaryFrame: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
 --- !u!114 &1001414787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29634,7 +29634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -30054,7 +30054,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -31131,10 +31131,10 @@ MonoBehaviour:
   _levelTxt: {fileID: 1301999771}
   _equipmentType: 3
   _defaultFrame: {fileID: 21300000, guid: dd77367546bf4433dbbb2317a935df54, type: 3}
-  _commonFrame: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
-  _rareFrame: {fileID: 21300000, guid: e6eea4f7cbb9f46f79c0fe06180fa5b3, type: 3}
-  _epicFrame: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
-  _legendaryFrame: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  _commonFrame: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
+  _rareFrame: {fileID: 21300000, guid: 15e7f349b5ac5d54984aeb631cdc5d6c, type: 3}
+  _epicFrame: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
+  _legendaryFrame: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
 --- !u!114 &1119560447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38977,7 +38977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -39903,10 +39903,10 @@ MonoBehaviour:
   _levelTxt: {fileID: 1079748581}
   _equipmentType: 2
   _defaultFrame: {fileID: 21300000, guid: dd77367546bf4433dbbb2317a935df54, type: 3}
-  _commonFrame: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
-  _rareFrame: {fileID: 21300000, guid: e6eea4f7cbb9f46f79c0fe06180fa5b3, type: 3}
-  _epicFrame: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
-  _legendaryFrame: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  _commonFrame: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
+  _rareFrame: {fileID: 21300000, guid: 15e7f349b5ac5d54984aeb631cdc5d6c, type: 3}
+  _epicFrame: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
+  _legendaryFrame: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
 --- !u!114 &1470405781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43509,10 +43509,10 @@ MonoBehaviour:
   _saveLoadData: {fileID: 354019230}
   _sortEquipmentItems: {fileID: 90631461}
   _inventoryView: {fileID: 1833050166}
-  _commonFrame: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
-  _rareFrame: {fileID: 21300000, guid: e6eea4f7cbb9f46f79c0fe06180fa5b3, type: 3}
-  _epicFrame: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
-  _legendaryFrame: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  _commonFrame: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
+  _rareFrame: {fileID: 21300000, guid: 15e7f349b5ac5d54984aeb631cdc5d6c, type: 3}
+  _epicFrame: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
+  _legendaryFrame: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
   _helmetIcon: {fileID: 21300000, guid: b1d50cb49035c459c8272b17e4f772b7, type: 3}
   _armorIcon: {fileID: 21300000, guid: bf6f75e5b2a5b4e64af8cb3a15a5b0ae, type: 3}
   _bootsIcon: {fileID: 21300000, guid: f924599efe4d14ebdbd19150bc821595, type: 3}
@@ -49195,10 +49195,10 @@ MonoBehaviour:
   _levelTxt: {fileID: 128707089}
   _equipmentType: 4
   _defaultFrame: {fileID: 21300000, guid: dd77367546bf4433dbbb2317a935df54, type: 3}
-  _commonFrame: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
-  _rareFrame: {fileID: 21300000, guid: e6eea4f7cbb9f46f79c0fe06180fa5b3, type: 3}
-  _epicFrame: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
-  _legendaryFrame: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  _commonFrame: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
+  _rareFrame: {fileID: 21300000, guid: 15e7f349b5ac5d54984aeb631cdc5d6c, type: 3}
+  _epicFrame: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
+  _legendaryFrame: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
 --- !u!114 &1831973928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51554,7 +51554,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -54167,10 +54167,10 @@ MonoBehaviour:
   _levelTxt: {fileID: 1888444012}
   _equipmentType: 0
   _defaultFrame: {fileID: 21300000, guid: dd77367546bf4433dbbb2317a935df54, type: 3}
-  _commonFrame: {fileID: 21300000, guid: 35d7e6588f1f34db1b9a5e62f4efdf77, type: 3}
-  _rareFrame: {fileID: 21300000, guid: e6eea4f7cbb9f46f79c0fe06180fa5b3, type: 3}
-  _epicFrame: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
-  _legendaryFrame: {fileID: 21300000, guid: c7ade68a31f1d4e12a57617409b6ee8a, type: 3}
+  _commonFrame: {fileID: 21300000, guid: f2330f9cb80628b4f8f810b9310f8347, type: 3}
+  _rareFrame: {fileID: 21300000, guid: 15e7f349b5ac5d54984aeb631cdc5d6c, type: 3}
+  _epicFrame: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
+  _legendaryFrame: {fileID: 21300000, guid: 6d9b13334888fd541bead7dbca6337c2, type: 3}
 --- !u!114 &2032266682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57875,7 +57875,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 10d23572713d041c596abf5c00be11dc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ee8c7c72072c7114fb42730eec0a1cee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
