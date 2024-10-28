@@ -55,7 +55,11 @@ namespace SurvivalChicken.Controllers
                 return;
 
             if (_firstLoadingTutorial != null)
+            {
+                if(!_firstLoadingTutorial.IsComplete())
+                    _saveLoadData.Gems += 80;
                 _firstLoadingTutorial.Complete();
+            }
 
             _gameResults = true;
 
@@ -90,7 +94,11 @@ namespace SurvivalChicken.Controllers
                 return;
 
             if (_firstLoadingTutorial != null)
+            {
+                if (!_firstLoadingTutorial.IsComplete())
+                    _saveLoadData.Gems += 80;
                 _firstLoadingTutorial.Complete();
+            }
 
             _gameResults = true;
 

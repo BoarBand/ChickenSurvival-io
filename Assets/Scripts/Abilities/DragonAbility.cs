@@ -104,6 +104,9 @@ namespace SurvivalChicken.Abilities
 
             EnemiesObject.Enemy enemy = AreaCounter.GetRandomEnemyFromArea();
 
+            if (enemy == null)
+                return;
+
             if (enemy.transform.position.x >= transform.position.x)
                 transform.localScale = new Vector3(-1f, 1f, 1f);
             else

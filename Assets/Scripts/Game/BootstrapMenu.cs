@@ -15,6 +15,7 @@ namespace SurvivalChicken.Bootstrap
         [SerializeField] private SaveLoadData _saveLoadData;
         [SerializeField] private SortEquipmentItems _sortEquipmentItems;
         [SerializeField] private DailyRewards _dailyRewards;
+        [SerializeField] private SettingsView _settingsView;
 
         private void Awake()
         {
@@ -28,6 +29,7 @@ namespace SurvivalChicken.Bootstrap
             _dailyRewards.Initialize();
             _inventoryView.Initalize();
             _sortEquipmentItems.Sort(SortEquipmentItems.SortType.Rarity);
+            _settingsView.Initialize();
         }
     }
 }

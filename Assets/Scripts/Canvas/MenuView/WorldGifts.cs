@@ -42,8 +42,8 @@ namespace SurvivalChicken.Controllers
 
             if (_saveLoadData.StagePlayTimes[worldNum] > TimeToThirdGift)
             {
-                coins = 300;
-                gems = 30;
+                coins = 1000;
+                gems = 120;
 
                 _collectedPanelView.Initialize(CreateCollectItem(_coinCollectItems, coins, () => _saveLoadData.Coins += coins), 
                     CreateCollectItem(_gemCollectItems, gems, () => { _saveLoadData.Gems += gems; }));
@@ -54,8 +54,8 @@ namespace SurvivalChicken.Controllers
 
             if (_saveLoadData.StagePlayTimes[worldNum] > TimeToSecondGift && _saveLoadData.StagePlayTimes[worldNum] < TimeToThirdGift)
             {
-                coins = 200;
-                gems = 20;
+                coins = 750;
+                gems = 60;
 
                 _collectedPanelView.Initialize(CreateCollectItem(_coinCollectItems, coins, () => _saveLoadData.Coins += coins),
                     CreateCollectItem(_gemCollectItems, gems, () => _saveLoadData.Gems += gems));
@@ -65,8 +65,8 @@ namespace SurvivalChicken.Controllers
 
             if (_saveLoadData.StagePlayTimes[worldNum] > TimeToFirstGift && _saveLoadData.StagePlayTimes[worldNum] < TimeToSecondGift)
             {
-                coins = 100;
-                gems = 10;
+                coins = 200;
+                gems = 20;
 
                 _collectedPanelView.Initialize(CreateCollectItem(_coinCollectItems, coins, () => _saveLoadData.Coins += coins), 
                     CreateCollectItem(_gemCollectItems, gems, () => _saveLoadData.Gems += gems));

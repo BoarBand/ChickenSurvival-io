@@ -37,6 +37,10 @@ namespace SurvivalChicken.SaveLoadDatas
 
         public int NextDayToGetDailyReward = 0;
 
+        public int MusicMute = 0;
+
+        public int SoundMute = 0;
+
         [SerializeField] private ScriptableObject[] _scriptableObjectsToSave;
 
         private List<ISaveLoadPersistentData> _saveLoadPersistentDatas = new List<ISaveLoadPersistentData>();
@@ -75,6 +79,8 @@ namespace SurvivalChicken.SaveLoadDatas
                 saveData.ClaimedDailyRewards = ClaimedDailyRewards;
                 saveData.CurrentDayToGetDailyReward = CurrentDayToGetDailyReward;
                 saveData.NextDayToGetDailyReward = NextDayToGetDailyReward;
+                saveData.MusicMute = MusicMute;
+                saveData.SoundMute = SoundMute;
                 bf.Serialize(file, saveData);
             }
 
@@ -109,6 +115,8 @@ namespace SurvivalChicken.SaveLoadDatas
                 ClaimedDailyRewards = saveData.ClaimedDailyRewards;
                 CurrentDayToGetDailyReward = saveData.CurrentDayToGetDailyReward;
                 NextDayToGetDailyReward = saveData.NextDayToGetDailyReward;
+                MusicMute = saveData.MusicMute;
+                SoundMute = saveData.SoundMute;
             }
 
             foreach (ISaveLoadPersistentData saveLoadPersistentData in _saveLoadPersistentDatas)
@@ -132,6 +140,10 @@ namespace SurvivalChicken.SaveLoadDatas
             CurrentDayToGetDailyReward = 0;
 
             NextDayToGetDailyReward = 0;
+
+            MusicMute = 0;
+
+            SoundMute = 0;
 
             for (int i = 0; i < StagePlayTimes.Length; i++)
                 StagePlayTimes[i] = 0;
@@ -180,5 +192,9 @@ namespace SurvivalChicken.SaveLoadDatas
         public int CurrentDayToGetDailyReward = 0;
 
         public int NextDayToGetDailyReward = 0;
+
+        public int MusicMute;
+
+        public int SoundMute;
     }
 }

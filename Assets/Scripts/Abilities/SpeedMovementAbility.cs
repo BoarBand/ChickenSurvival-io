@@ -31,19 +31,19 @@ namespace SurvivalChicken.Abilities
             switch (AbilityParameters.Level)
             {
                 case 1:
-                    _changeMovement.ChangeMovementSpeed(5f);
+                    _changeMovement.ChangeMovementSpeed(2.5f);
                     break;
                 case 2:
-                    _changeMovement.ChangeMovementSpeed(10f);
+                    _changeMovement.ChangeMovementSpeed(5f);
                     break;
                 case 3:
-                    _changeMovement.ChangeMovementSpeed(15f);
+                    _changeMovement.ChangeMovementSpeed(7.5f);
                     break;
                 case 4:
-                    _changeMovement.ChangeMovementSpeed(20f);
+                    _changeMovement.ChangeMovementSpeed(10f);
                     break;
                 case 5:
-                    _changeMovement.ChangeMovementSpeed(25f);
+                    _changeMovement.ChangeMovementSpeed(12.5f);
                     break;
             }
         }

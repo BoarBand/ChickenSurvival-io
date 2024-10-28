@@ -17339,7 +17339,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 1267621186448600154, guid: 9c9d36493f8ac594aa969269d71c7f4a, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 33506d60377f4ec478c1418d9d70f4d5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 76197d851de42034d9809878994a61ef, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.45
   m_Pitch: 1
@@ -23343,6 +23343,7 @@ MonoBehaviour:
   _abilitiesSelector: {fileID: 2067797303}
   _boostItemsSpawner: {fileID: 1998246694}
   _saveLoadData: {fileID: 1671890997}
+  _joystickTutorial: {fileID: 0}
 --- !u!4 &1671890996
 Transform:
   m_ObjectHideFlags: 0
@@ -23373,6 +23374,7 @@ MonoBehaviour:
   Coins: 0
   Gems: 0
   Energy: 100
+  GoldKeys: 0
   HelmetUpgradeLevel: 1
   ArmorUpgradeLevel: 1
   BootsUpgradeLevel: 1
@@ -23381,6 +23383,10 @@ MonoBehaviour:
   PetUpgradeLevel: 1
   StagePlayTimes: 0000000000000000
   LockedWorlds: 0000000001000000
+  DailyRewardID: 0
+  ClaimedDailyRewards: 00000000000000000000000000000000000000000000000000000000
+  CurrentDayToGetDailyReward: 0
+  NextDayToGetDailyReward: 0
   _scriptableObjectsToSave:
   - {fileID: 11400000, guid: 6eb5c70afcc74d847bea646408cdf2d1, type: 2}
   - {fileID: 11400000, guid: 7fa4af754a9da0049a57b5b7beadbe7b, type: 2}
