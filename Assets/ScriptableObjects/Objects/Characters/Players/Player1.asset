@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Health: 350
   Damage: 5
-  MoveSpeed: 2
-  TotalDamage: 25
-  TotalHealth: 380
+  MoveSpeed: 3
+  TotalDamage: 5
+  TotalHealth: 350
   CritDamageChance: 20
   CritDamageValue: 80
-  InitialAbility: {fileID: 11400000, guid: 5fcca2878751f7f4fa4cc4d5d326a95f, type: 2}
+  InitialAbility: {fileID: 0}
   <HelmetEquipment>k__BackingField: {fileID: 0}
   <ArmorEquipment>k__BackingField: {fileID: 0}
   <BootsEquipment>k__BackingField: {fileID: 0}

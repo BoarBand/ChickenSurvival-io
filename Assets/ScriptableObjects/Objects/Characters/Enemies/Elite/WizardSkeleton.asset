@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: WizardSkeleton
   m_EditorClassIdentifier: 
   Health: 560
+  Damage: 6
   MoveSpeed: 0.9
-  Damage: 26
-  AttackFrequency: 3
+  AttackFrequency: 10
