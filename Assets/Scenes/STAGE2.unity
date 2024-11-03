@@ -11030,7 +11030,7 @@ Transform:
   m_GameObject: {fileID: 814369529}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11090,7 +11090,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -5
-  m_Sprite: {fileID: 21300000, guid: 81d49e250af7d9049ad3dc6c5c351316, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d93dac7b99351e45b44d4d784086e18, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -23387,6 +23387,8 @@ MonoBehaviour:
   ClaimedDailyRewards: 00000000000000000000000000000000000000000000000000000000
   CurrentDayToGetDailyReward: 0
   NextDayToGetDailyReward: 0
+  MusicMute: 0
+  SoundMute: 0
   _scriptableObjectsToSave:
   - {fileID: 11400000, guid: 6eb5c70afcc74d847bea646408cdf2d1, type: 2}
   - {fileID: 11400000, guid: 7fa4af754a9da0049a57b5b7beadbe7b, type: 2}

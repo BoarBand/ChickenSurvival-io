@@ -170,6 +170,7 @@ MonoBehaviour:
   Coins: 0
   Gems: 0
   Energy: 100
+  GoldKeys: 0
   HelmetUpgradeLevel: 1
   ArmorUpgradeLevel: 1
   BootsUpgradeLevel: 1
@@ -178,6 +179,12 @@ MonoBehaviour:
   PetUpgradeLevel: 1
   StagePlayTimes: 0000000000000000
   LockedWorlds: 0000000001000000
+  DailyRewardID: 0
+  ClaimedDailyRewards: 00000000000000000000000000000000000000000000000000000000
+  CurrentDayToGetDailyReward: 0
+  NextDayToGetDailyReward: 0
+  MusicMute: 0
+  SoundMute: 0
   _scriptableObjectsToSave:
   - {fileID: 11400000, guid: 7fa4af754a9da0049a57b5b7beadbe7b, type: 2}
   - {fileID: 11400000, guid: 6eb5c70afcc74d847bea646408cdf2d1, type: 2}
@@ -365,6 +372,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &531867374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 531867376}
+  - component: {fileID: 531867375}
+  m_Layer: 0
+  m_Name: Analytics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &531867375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531867374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a4a45755c42ba54286fa7b53e36f00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &531867376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531867374}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1698444208
 GameObject:
   m_ObjectHideFlags: 0
@@ -539,3 +590,4 @@ SceneRoots:
   - {fileID: 469934883}
   - {fileID: 1698444210}
   - {fileID: 82115449}
+  - {fileID: 531867376}

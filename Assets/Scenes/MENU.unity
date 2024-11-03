@@ -18635,7 +18635,7 @@ MonoBehaviour:
   - 2. Dark Town
   _worldSprites:
   - {fileID: 21300000, guid: 07d6e7bac01b3d1479174fa1f6e72f19, type: 3}
-  - {fileID: 21300000, guid: 81d49e250af7d9049ad3dc6c5c351316, type: 3}
+  - {fileID: 21300000, guid: 2d93dac7b99351e45b44d4d784086e18, type: 3}
   _worldFrames:
   - {fileID: 21300000, guid: ce074144a8f7b47508cffe4445e20fb5, type: 3}
   - {fileID: 21300000, guid: 79be0ebb2700b48e7a8792238a8934ef, type: 3}
@@ -28014,10 +28014,10 @@ RectTransform:
   - {fileID: 1123841775}
   m_Father: {fileID: 231520271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1008, y: -150}
-  m_SizeDelta: {x: 288, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &977384600
 MonoBehaviour:
@@ -28436,10 +28436,10 @@ RectTransform:
   - {fileID: 15340335}
   m_Father: {fileID: 231520271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 144, y: -150}
-  m_SizeDelta: {x: 288, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &992334932
 MonoBehaviour:
@@ -35770,10 +35770,10 @@ RectTransform:
   - {fileID: 1116656829}
   m_Father: {fileID: 231520271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1296, y: -150}
-  m_SizeDelta: {x: 288, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270965811
 MonoBehaviour:
@@ -37411,10 +37411,10 @@ RectTransform:
   - {fileID: 249474135}
   m_Father: {fileID: 231520271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -150}
-  m_SizeDelta: {x: 288, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1324262228
 MonoBehaviour:
@@ -58441,10 +58441,10 @@ RectTransform:
   - {fileID: 1291801613}
   m_Father: {fileID: 231520271}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 432, y: -150}
-  m_SizeDelta: {x: 288, y: 300}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2066594819
 MonoBehaviour:
@@ -60622,50 +60622,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2112410439}
   m_CullTransparentMesh: 1
---- !u!1 &2118170218
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2118170220}
-  - component: {fileID: 2118170219}
-  m_Layer: 0
-  m_Name: Analytics
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2118170219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118170218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a4a45755c42ba54286fa7b53e36f00c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2118170220
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2118170218}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2124165318
 GameObject:
   m_ObjectHideFlags: 0
@@ -61147,4 +61103,3 @@ SceneRoots:
   - {fileID: 1391758767}
   - {fileID: 1824490900}
   - {fileID: 354019229}
-  - {fileID: 2118170220}
