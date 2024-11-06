@@ -25,14 +25,14 @@ namespace SurvivalChicken.Spawner
         private Coroutine _spawnEnemiesBySquare;
 
         private readonly uint InitEnemiesAmount = 0;
-        private readonly float MaxSpawnOffScreenOffset = 150f;
+        private readonly float MaxSpawnOffScreenOffset = 350f;
 
-        private readonly float MinSpawnFrequency = 2.5f;
-        private readonly float MaxSpawnFrequency = 0.02f;
+        private readonly float MinSpawnFrequency = 2f;
+        private readonly float MaxSpawnFrequency = 0.04f;
         private readonly float TimeToMaxFrequency = 600f;
 
-        private readonly float MinChanceToSpawnEliteEnemy = 0.8f;
-        private readonly float MaxChanceToSpawnEliteEnemy = 0.4f;
+        private readonly float MinChanceToSpawnEliteEnemy = 0.05f;
+        private readonly float MaxChanceToSpawnEliteEnemy = 0.7f;
         private readonly float TimeToMaxChanceToSpawnEliteEnemy = 600f;
 
         public void Initialize()
@@ -168,22 +168,22 @@ namespace SurvivalChicken.Spawner
             Vector3 topBorder = new Vector3(0f, 0f, 0f);
 
             for (float i = topBorder.x; i < topBorder.x + Screen.width; i += step)
-                _objectsPool.Get().transform.position = Camera.main.ScreenToWorldPoint(new Vector3(i, topBorder.y, 0f));
+                _objectsPool.Get().transform.position = Camera.main.ScreenToWorldPoint(new Vector3(i, topBorder.y + 300f, 0f));
 
             Vector3 downBorder = new Vector3(0f, Screen.height, 0f);
 
             for (float i = downBorder.x; i < downBorder.x + Screen.width; i += step)
-                _objectsPool.Get().transform.position = Camera.main.ScreenToWorldPoint(new Vector3(i, downBorder.y, 0f));
+                _objectsPool.Get().transform.position = Camera.main.ScreenToWorldPoint(new Vector3(i, downBorder.y - 300f, 0f));
 
             Vector3 leftBorder = new Vector3(0f, 0f, 0f);
 
             for (float i = leftBorder.y; i < leftBorder.y + Screen.height; i += step)
-                _objectsPool.Get().transform.position = Camera.main.ScreenToWorldPoint(new Vector3(0, i, 0f));
+                _objectsPool.Get().transform.position = Camera.main.ScreenToWorldPoint(new Vector3(-300f, i, 0f));
 
             Vector3 rightBorder = new Vector3(Screen.width, 0f, 0f);
 
             for (float i = rightBorder.y; i < rightBorder.y + Screen.height; i += step)
-                _objectsPool.Get().transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, i, 0f));
+                _objectsPool.Get().transform.position = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width + 300f, i, 0f));
         }
 
         private Vector3 GetRandomPointOffscreen()

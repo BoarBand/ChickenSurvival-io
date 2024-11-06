@@ -23,7 +23,7 @@ namespace SurvivalChicken.Spawner
 
         private Coroutine _waitByTimerCoroutine;
 
-        private readonly uint InitAmount = 25;
+        private readonly uint InitAmount = 35;
         private readonly float TimeToIncreaseFeed = 240f;
 
         public void Initialize()

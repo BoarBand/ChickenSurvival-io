@@ -23743,6 +23743,8 @@ MonoBehaviour:
   ClaimedDailyRewards: 00000000000000000000000000000000000000000000000000000000
   CurrentDayToGetDailyReward: 0
   NextDayToGetDailyReward: 0
+  MusicMute: 0
+  SoundMute: 0
   _scriptableObjectsToSave:
   - {fileID: 11400000, guid: 6eb5c70afcc74d847bea646408cdf2d1, type: 2}
   - {fileID: 11400000, guid: 7fa4af754a9da0049a57b5b7beadbe7b, type: 2}
@@ -27460,8 +27462,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _boostItems:
   - {fileID: -5826835491121581774, guid: c3749dacacb4283408c2c00809a34694, type: 3}
-  - {fileID: 1120709369563353563, guid: 5d3c4bedc75b04b469c058192f3a032b, type: 3}
   - {fileID: 2466291599814152441, guid: 6c03265b435631646879a53a9678a451, type: 3}
+  - {fileID: 1120709369563353563, guid: 5d3c4bedc75b04b469c058192f3a032b, type: 3}
   _fortuneWheelBoost: {fileID: 1120709369563353563, guid: 5d3c4bedc75b04b469c058192f3a032b, type: 3}
   _fortuneWheelView: {fileID: 687342668}
 --- !u!4 &1998246695
@@ -58004,8 +58006,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 256, y: 256}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8170153792363263369
 MonoBehaviour:
@@ -58020,7 +58022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8727671, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -58080,7 +58082,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 140, y: 140}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8170153792686018462
 MonoBehaviour:
@@ -58095,7 +58097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.8901961, b: 0.4862745, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -58210,7 +58212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handleRange: 1
-  deadZone: 1
+  deadZone: 0
   axisOptions: 0
   snapX: 0
   snapY: 0

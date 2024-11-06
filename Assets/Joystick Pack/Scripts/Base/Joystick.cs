@@ -81,6 +81,8 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         HandleInput(input.magnitude, input.normalized, radius, cam);
         handle.anchoredPosition = input * radius * handleRange;
 
+        input = input.normalized;
+
         Dragged?.Invoke();
     }
 

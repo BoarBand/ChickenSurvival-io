@@ -52,7 +52,7 @@ namespace SurvivalChicken.Controllers
 
         private void SetMaxProgressBarValue(int level)
         {
-            _maxValue = _currentValue + InitMaxValue + (IncreaseValueStepPerLevel * (level - 1) * 0.5f);
+            _maxValue = _currentValue + InitMaxValue + (IncreaseValueStepPerLevel * (level - 1) * 0.75f);
 
             _progressBarAbility.minValue = _currentValue;
             _progressBarAbility.maxValue = _maxValue;
